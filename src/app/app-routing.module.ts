@@ -5,7 +5,7 @@ import { ContactComponent } from './contact/contact.component';
 import { TarifsComponent } from './tarifs/tarifs.component';
 import { Error404Component } from './error404/error404.component';
 import { DepotArticlesComponent } from './depot-articles/depot-articles.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashboardComponent } from './DashboardComponent/dashboard/dashboard.component';
 import { SignUpInComponent } from './sign-up-in/sign-up-in.component';
 import { AuthGuard } from './auth.guard';
 import { MyAccountComponent } from './my-account/my-account.component';

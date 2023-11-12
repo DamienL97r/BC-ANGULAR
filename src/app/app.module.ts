@@ -24,7 +24,7 @@ import { DepotArticlesHeaderComponent } from './depot-articles-header/depot-arti
 import { DepotArticlesContainerArticlesComponent } from './depot-articles-container-articles/depot-articles-container-articles.component';
 import { DepotArticlesContainerBasketComponent } from './depot-articles-container-basket/depot-articles-container-basket.component';
 import { DepotArticlesModalComponent } from './depot-articles-modal/depot-articles-modal.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashboardComponent } from './DashboardComponent/dashboard/dashboard.component';
 import { SignUpInComponent } from './sign-up-in/sign-up-in.component';
 import { AuthInterceptor } from './auth.interceptor';
 import { MyAccountComponent } from './my-account/my-account.component';

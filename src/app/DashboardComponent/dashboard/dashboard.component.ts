@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ArticleService } from '../article.service';
+import { ArticleService } from '../../article.service';
 
 @Component({
   selector: 'app-dashboard',
