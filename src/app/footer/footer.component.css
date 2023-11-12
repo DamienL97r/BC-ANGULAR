@@ -1,0 +1,105 @@
+/*FOOTER START*/
+
+footer{
+    background-color:#63A4C7;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.column-3-footer{
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 65%;
+    margin: 1% 18%;
+}
+
+.about {
+    color: white;
+    width: 300px;
+    margin-bottom: 20px;
+}
+
+.about > p {
+    font-size: 0.8rem;
+    margin: 20px 0;
+}
+
+.nav-footer {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 180px;
+    margin-bottom: 20px;
+}
+
+.nav-footer > a {
+    text-decoration: none;
+    color: white;
+    width: fit-content;
+    border-bottom: 2px solid rgba(255, 255, 255, 0);
+    margin: 2% 0;
+}
+
+.nav-footer > a:hover{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    border-bottom: 2px solid white;
+    transition: all 0.5s ease-in-out;
+}
+
+.icon-footer {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin-bottom: 20px;
+}
+
+.icon-footer > h3 {
+    color: white;
+}
+
+.social-icon {
+    display: flex;
+}
+
+.social-icon > a > img {
+    height: 25px;
+    padding: 0 5px;
+    cursor: pointer;
+}
+
+.social-icon > a > img:hover {
+    opacity: 0.6;
+    scale: 0.95;
+    transition: all 0.2s ease-in-out;
+}
+
+.paiement-icon > img{
+    width: 100px;
+    margin-top: 20px;
+}
+
+.brand-copyright{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 15px 0;
+}
+
+.brand-copyright > p {
+    color: white;
+}
+
+.brand-copyright > a {
+    text-decoration: none;
+    color: white;
+    margin: 0 20px;
+}
+
+.brand-copyright > span {
+    color: white;
+}
+/*FOOTER END*/

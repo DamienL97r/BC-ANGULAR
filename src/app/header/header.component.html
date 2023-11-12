@@ -1,0 +1,66 @@
+
+    <!--Menu responsive START-->
+
+    <div class="resp-nav" [ngClass]="{'resp-nav-scrolled': isResponsiveNavbarScrolled}" >
+        <div class="resp-nav-content">
+
+            <a routerLink="/">
+                <img id="logo-img-resp" class="logo-resp" src="./assets/INC/IMG/Logo/logo-light.png" alt="">
+            </a>
+
+            <img id="logo-title" src="./assets/INC/IMG/Logo/logo-title-white.png" alt="">
+
+            <a (click)="headerService.showModalNav = true">
+                <img id="icon-burger-menu" src="./assets/INC/IMG/Icones/menu-burger-white.png" alt="">
+            </a>
+        </div>
+    </div>
+
+    
+
+    <app-header-responsive-navbar *ngIf="headerService.showModalNav"></app-header-responsive-navbar>
+    
+
+   
+    <!--Menu responsive END-->
+
+
+
+
+
+    <nav [ngClass]="{'nav-scrolled': isDesktopNavbarScrolled}">
+        <a routerLink="/">
+            <img id="logo-img-desktop" class="logo" src="./assets/INC/IMG/Logo/logo-light.png" alt="">
+        </a>
+        
+
+        <div class="tab">
+            <a routerLink="/">Accueil</a>
+            <a routerLink="/tarifs">Tarifs</a>
+            <a routerLink="/depot-articles">Déposer des articles</a>
+            <a routerLink="/contact">Contact</a>
+            <a *ngIf="isLogged && isAdmin" routerLink="/admin/dashboard">Dashboard</a>
+        </div>
+
+        <div class="basket-connexionInscription">
+
+            <div class="basket">
+                <div *ngIf="countItemInBasket() !== 0 && isLogged" class="basket-item-counter">
+                    <span>{{ countItemInBasket() }}</span>
+                </div>
+                <img id="icon-basket" src="./assets/INC/IMG/Icones/panier.png" alt="">
+                <a (click)="seeBasket()">Panier</a>
+            </div>
+
+            <div *ngIf="!isLogged" class="connexionInscription">
+                <img id="icon-profil" src="./assets/INC/IMG/Icones/profil.png" alt="">
+                <a routerLink="connexion-inscription">Connexion / Inscription</a>
+            </div>
+
+            <div *ngIf="isLogged" class="connexionInscription">
+                <img id="icon-profil" src="./assets/INC/IMG/Icones/profil.png" alt="">
+                <a routerLink="/mon-compte">Mon compte</a>
+            </div>
+
+        </div>
+    </nav>

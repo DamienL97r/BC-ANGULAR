@@ -1,0 +1,62 @@
+
+<div class="order-process-bar">
+    <h3 id="basket">Panier</h3>
+    <div class="separator" id="first-separator"></div>
+    <h3 class="order-process-bar-title">Vos informations</h3>
+    <div class="separator" id="second-separator"></div>
+    <h3 class="order-process-bar-title">Paiement</h3>
+</div>
+
+<div class="summury-container">
+    <div class="summury-title">
+        <h2>Article(s)</h2>
+        <h2>Prix</h2>
+    </div>
+
+    <div *ngFor="let data of orderData">
+
+
+        <div *ngFor="let article of data.Articles" >
+            <h3 class="article-name">{{ article.articleData.name}}</h3>
+            <div class="container-flex-price">
+                <p>Quantité : {{article.quantity}}</p>
+                <div class="separator-invoice"></div>
+                <p class="item-price">{{ article.articleData.price * article.quantity | currency: 'EUR' }}</p>
+            </div>
+            
+    
+            <p>Service(s) :</p>
+            <div *ngFor="let service of article.services">
+                <div class="container-flex-price-services">
+                    <p class="service-name">{{ service.name }}</p>
+                    <div class="separator-invoice"></div>
+                    <p class="item-price">{{ service.price| currency: 'EUR'  }}</p>
+                </div>
+                
+            </div>
+
+        </div>
+
+        <div class="container-total-price">
+            <div class="container-flex-price">
+                <h3>Sous-total (HT)</h3>
+                <div class="separator-invoice"></div>
+                <h3>{{ (data.totalPrice / 1.2) | currency: 'EUR'  }}</h3>
+            </div>
+            <div class="container-flex-price">
+                <h3>Total (TTC)</h3>
+                <div class="separator-invoice"></div>
+                <h3>{{ data.totalPrice | currency: 'EUR'  }}</h3>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+
+</div>
+
+<div class="order-summary-btn">
+    <button class="main-btn" (click)="resetOrder()">Modifier ma commande</button>
+    <button class="main-btn" routerLink="/vos-informations">Continuer</button>
+</div>

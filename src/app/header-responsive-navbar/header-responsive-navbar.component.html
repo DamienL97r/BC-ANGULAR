@@ -1,0 +1,54 @@
+
+
+
+    <div id="hamburger-menu" class="hamburger-menu">
+        <div class="hamburger-menu-content">
+            <a (click)="headerService.showModalNav=false" class="close-hamburger-menu">&times;</a>
+    
+            <img src="./assets/INC/IMG/Logo/logo-title-black.png" alt="">
+    
+            <div class="tab-resp">
+                <a (click)="headerService.showModalNav=false" routerLink="/">Accueil</a>
+                <a (click)="headerService.showModalNav=false" routerLink="/tarifs">Tarifs</a>
+                <a (click)="headerService.showModalNav=false" routerLink="/depot-articles">Déposer des articles</a>
+                <a (click)="headerService.showModalNav=false" routerLink="/contact">Contact</a>
+                <a *ngIf="isLogged && isAdmin" (click)="headerService.showModalNav=false" routerLink="/admin/dashboard">Dashboard</a>
+            </div>
+    
+            <div class="resp-basket-connexionInscription">
+    
+                <div class="resp-basket">
+                    <div *ngIf="countItemInBasket() !== 0 && isLogged" class="basket-item-counter">
+                        <span>{{ countItemInBasket() }}</span>
+                    </div>
+                    <a (click)="seeBasket()" (click)="headerService.showModalNav=false">
+                        <img src="./assets/INC/IMG/Icones/panier-black.png" alt="">
+                        <p>Panier</p>
+                    </a>
+                </div>
+                
+                <div *ngIf="!isLogged" class="resp-connexionInscription">
+                    <a (click)="headerService.showModalNav=false" routerLink="connexion-inscription">
+                        <img src="./assets/INC/IMG/Icones/profil-black.png" alt="">
+                        <p>Connexion / Inscription</p>
+                    </a>
+                </div>
+
+                <div *ngIf="isLogged" class="resp-connexionInscription">
+                    <a (click)="headerService.showModalNav=false">
+                        <img src="./assets/INC/IMG/Icones/profil-black.png" alt="">
+                        <p routerLink="/mon-compte">Mon compte</p>
+                    </a>
+                </div>
+                
+            </div>
+    
+            <div class="resp-bran-copyright">
+                <p>ProClean PRESSING © 2023 |</p>
+                <a href="#">Mentions légales</a>
+                <span> - </span>
+                <a href="#">Politiques de confidentialités</a>
+            </div>
+            
+        </div>
+    </div>

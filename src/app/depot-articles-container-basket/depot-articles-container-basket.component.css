@@ -1,0 +1,130 @@
+/*CONTAINER BASKET START*/
+
+
+.container-basket{
+    width: 300px;
+    padding: 20px;
+    position: fixed;
+    right: 0;
+    top: 100px;
+    border-left: 2px solid #375DA5;  /*375DA5*/
+    background-color: #f1f1f1;
+}
+
+.container-basket > h2 {
+    padding: 15px 0px;
+}
+
+.scroller {
+    height: 80vh;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+}
+
+
+/* SCROLL START*/
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #63A4C7;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #ffffff00;
+}
+
+/* SCROLL END*/
+
+.basket-item-card {
+    margin: 10px;
+    width: 100%;
+    overflow-wrap: break-word;
+}
+
+.basket-item-card > p {
+    color: #666666;
+    margin-bottom: 15px;
+}
+
+.basket-item-card > ul > li {
+    color: #666666;
+    margin-left: 25px;
+    margin-bottom: 15px;
+}
+
+
+.basket-item-title-icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-bottom: 15px;
+}
+
+.basket-item-title-icons > .basket-item-icons > img {
+    height: 25px;
+    margin-right: 20px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.basket-item-title-icons > .basket-item-icons > #delete-logo:hover {
+    background-color: red;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+
+
+.basket-item-title-icons > .basket-item-icons > #update-logo:hover {
+    cursor: not-allowed;
+}
+
+.basket-item-separator {
+    margin: 15px 0 30px 0;
+    width: 100%;
+}
+
+.basket-btn-total-price {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.basket-btn-total-price > button {
+    margin: auto;
+    margin-bottom: 100px;
+}
+
+.basket-btn-total-price > h2 {
+    margin-bottom: 20px;
+}
+
+
+/*IF EMPTY BASKET*/
+
+.empty-basket {
+    display: flex;
+    flex-direction: column;
+    height: 70%;
+    text-align: center;
+}
+
+.empty-basket > h2 {
+    margin: 10px 0;
+}
+
+.empty-basket > img {
+    height: 200px;
+    width:max-content;
+    filter: grayscale(60%);
+    margin: 0 auto;
+}
+
+
+
+/*CONTAINER BASKET END*/

@@ -1,0 +1,43 @@
+
+<div class="order-process-bar">
+    <h3 id="basket">Panier</h3>
+    <div class="separator" id="first-separator"></div>
+    <h3 class="order-process-bar-title" id="infos">Vos informations</h3>
+    <div class="separator" id="second-separator"></div>
+    <h3 class="order-process-bar-title">Paiement</h3>
+</div>
+
+<div class="summury-container">
+    <p>Veuillez sélectionner une date de dépôt et de retrait de vos articles. Ainsi que de remplir les champs ci-dessous avec vos informations. 
+        <br> <br>
+    Les champs avec le symbole <span>*</span>  sont des champs obligatoires.</p>
+
+
+    <form [formGroup]="dateInfoForm" (ngSubmit)="handleSubmit()">
+
+        <div class="date-form">
+
+            <div class="date-form-input">
+                <label for="depositDate">Date de dépot</label>
+                <input class="date-input" type="date" formControlName="depositDate" required>
+                <p class="notice-input">Remarque : tous les dépôts se font en boutique du lundi au vendredi, de 8h00 à 16h00 et le samedi matin de 9h30 à 12h00.</p>
+            </div>
+            
+
+
+            <div class="date-form-input">
+                <label for="retrievalDate">Date de retrait</label>
+                <input class="date-input" type="date" formControlName="retrievalDate" required>
+                <p class="notice-input">Remarque : tous les retraits se font en boutique du lundi au vendredi, de 8h00 à 16h00 et le samedi matin de 9h30 à 12h00.
+                    <br>
+                Nous garantissons un retrait disponible sous 2 à 3 jours ouvrés.</p>
+            </div>
+
+        </div>
+
+        <div class="btn-form">
+            <button class="main-btn">Valider</button>
+        </div>
+        
+    </form>
+</div>

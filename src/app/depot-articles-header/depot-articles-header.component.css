@@ -1,0 +1,16 @@
+/*HEADER DEPOT ARTICLES START*/
+
+.heading-depot-articles {
+    padding: 100px 0% 0px 110px;
+}
+
+.heading-depot-articles > h2{
+    margin-bottom: 30px;
+}
+
+.heading-depot-articles > p{
+    padding-bottom: 20px;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+/*HEADER DEPOT ARTICLES END*/

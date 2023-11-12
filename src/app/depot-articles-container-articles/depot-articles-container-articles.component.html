@@ -1,0 +1,31 @@
+
+<div class="container-depot-article-basket">
+
+    <div class="depot-article" >
+
+        <div *ngFor="let article of articles">
+            <a (click)="articleService.showModalArticle = true" (click)="sendProductDataToService(article)" class="openModal">
+                <div class="card-article">
+                    <img src="./assets/INC/IMG/Vetements/Costume/costume-2.png" alt="">
+                    <h3>{{article.name}}</h3>
+                </div>
+            </a>
+
+
+            
+        </div>
+
+        <!--Modal-->
+
+        <div>
+            <app-depot-articles-modal *ngIf="articleService.showModalArticle"></app-depot-articles-modal>
+        </div>
+
+        
+
+    </div>
+
+    <!--Basket-->
+
+    <app-depot-articles-container-basket></app-depot-articles-container-basket>
+</div>

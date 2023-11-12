@@ -1,0 +1,88 @@
+/*CALL TO ACTION START*/
+
+.call-to-action {
+    /* background-image: url(../../INC/IMG/Accueil/waldemar-k06EAtkJzXU-unsplash.jpg); */
+    background-image: url(../../assets/INC/IMG/Accueil/waldemar-k06EAtkJzXU-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 550px;
+    padding-top: 5%;
+}
+
+.cta-content {
+    color: white;
+    background-color: #375da596;
+    border-radius: 20px;
+    padding: 50px 80px;
+    width: 70%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+.cta-content > h1 {
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.cta-content > p {
+    margin-bottom: 60px;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.cta-content > a {
+    display: block;
+    margin: auto;
+    width: 150px;
+    text-align: center;  
+    text-decoration: none;
+    color: white;
+    border: 3px solid rgba(0, 0, 0, 0);
+    background-color: #63A4C7;
+    padding: 15px 30px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+}
+
+.cta-content > a:hover {
+    background-color: white;
+    color: #63A4C7;
+    border: 3px solid #63A4C7;
+    transition: all 0.5s ease-in-out;
+}
+
+
+@media screen and (max-width: 1000px) {
+    .call-to-action {
+        background-image: url(../../assets/INC/IMG/Accueil/waldemar-k06EAtkJzXU-unsplash.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 380px;
+        padding-top: 5%;
+    }
+
+    .cta-content {
+        color: white;
+        background-color: #375da596;
+        border-radius: 20px;
+        padding: 25px 50px;
+        width: 68%;
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .cta-content > h1 {
+        text-transform: uppercase;
+        margin-bottom: 30px;
+        font-size: 1.2rem;
+    }
+    
+    .cta-content > p {
+        margin-bottom: 60px;
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+}
+/*CALL TO ACTION END*/

@@ -1,0 +1,146 @@
+<div class="container-img-bg" >
+  <ng-container *ngFor="let image of imageList">
+    <img [src]="image" alt="">
+  </ng-container>
+</div>
+
+
+
+<div class="overlay-form-sign-up-in">
+
+
+  <div class="container-form-sign-up-in">
+    <div class="forms">
+      <form *ngIf="showFormRegister" [formGroup]="registerForm" (ngSubmit)="handleSubmit()">
+        
+        <div class="heading-form">
+          <img src="../../assets/INC/IMG/Logo/logo-light.png" alt="">
+          <h2>Inscription</h2>
+        </div>
+        
+        <div class=" ">
+  
+
+          <div class="custom-row">
+
+            <div class="custom-form-control">
+              <label for="firstname">Prénom</label>
+              <input class=" " type="text" formControlName="firstname" required>
+            </div>  
+  
+            <div class="custom-form-control">
+              <label for="lastname">Nom</label>
+              <input class=" " type="text" formControlName="lastname" required>
+            </div>
+
+          </div>
+  
+
+          <div class="custom-row">
+            <div class="custom-form-control">
+              <label for="gender">Genre</label>
+              <select formControlName="gender" id="">
+                <option value="homme">Homme</option>
+                <option value="femme">Femme</option>
+                <option value="autre">Autre</option>
+              </select>
+            </div>
+  
+            <div class="custom-form-control">
+              <label for="birthdate">Date de naissance</label>
+              <input class=" " type="date" formControlName="birthdate" required>
+            </div>
+          </div>
+  
+
+  
+            <div class="custom-form-control">
+              <label for="adresse">Adresse</label>
+              <input class=" " type="text" formControlName="adresse" required>
+            </div>
+  
+            
+  
+            <div class="custom-form-control">
+              <label for="email">Email</label>
+              <input class=" " type="email" formControlName="email" required>
+            </div>
+  
+  
+          
+            <div class="custom-form-control">
+              <label for="plainPassword">Mot de passe</label>
+              <input class=" " type="password" formControlName="plainPassword" required>
+            </div>
+  
+            <div class="custom-form-control">
+              <label for="confirmPlainPassword">Confirmer le mot de passe</label>
+              <input class=" " type="password" formControlName="confirmPlainPassword" required>
+            </div>
+  
+            <div class="container-error-message">
+              <p>{{feedback}}</p>
+            </div>
+            
+          <button class="main-btn form-sign-up-in-btn">S'inscrire</button>
+          <p>Vous avez déja un compte ? <span (click)="showConnexionForm()">Connectez-vous !</span></p>
+        </div>
+  
+      </form>
+  
+      
+      <form *ngIf="showFormConnexion" [formGroup]="formConnexion" (ngSubmit)="handleSubmitConnexion()">
+        <div class="heading-form">
+          <img src="../../assets/INC/IMG/Logo/logo-light.png" alt="">
+          <h2>Connexion</h2>
+        </div>
+      <div class=" ">
+  
+          <div class=" ">
+  
+            <div class="custom-form-control">
+              <label for="paperInputs2">Email</label>
+              <input class="connexion-input" type="email" formControlName="username" required>
+            </div>
+  
+          </div>
+  
+          <div class=" ">
+  
+            <div class="custom-form-control">
+              <label for="paperInputs3">Mot de passe</label>
+              <input class="connexion-input" type="password" formControlName="password" required>
+            </div>
+  
+          </div>
+          <p class="loader-connexion">{{loaderConnexion}}</p>
+
+          <div class="container-error-message">
+            <p>{{feedback}}</p>
+          </div>
+          
+          <button class="main-btn form-sign-up-in-btn">Se connecter</button>
+          <p>Pas de compte ? <span (click)="showRegisterForm()">Inscrivez-vous</span></p>
+        </div>
+  
+      </form>
+    </div>
+
+    <div *ngIf="!isLogged && !showBtn" class="container-btn-sign-up-in">
+
+      <img src="../../assets/INC/IMG/Logo/logo-title-white.png" alt="">
+      <button (click)="displaySignIn()">Inscription</button>
+      <button (click)="displaySignUp()">Connexion</button>
+    </div>
+    
+    <div *ngIf="isLogged" class="hello-user">
+      <p>Bonjour {{ currentUser.firstname }} {{ currentUser.lastname }}, vous êtes connecté !</p>
+      <button routerLink="/" class="main-btn">Retour à l'accueil</button>
+    </div>
+
+  </div>
+
+
+
+
+</div>

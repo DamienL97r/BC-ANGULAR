@@ -1,0 +1,106 @@
+
+
+.summury-container {
+    width: 90%;
+    margin: auto;
+}
+
+.order-process-bar {
+    padding: 40px 0 60px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    width: 80%;
+}
+
+.order-process-bar-title {
+    color: #BBBBBB;
+    font-size: 1rem;
+}
+
+.order-process-bar > #basket {
+    color: #375DA5;
+    font-size: 1.5rem;
+}
+
+.order-process-bar > #infos {
+    color: #375DA5;
+    font-size: 1.5rem;
+}
+
+#first-separator {
+    height: 3px;
+    width: 20%;
+    border-radius: 10px;
+    background-color: #375DA5;
+}
+
+#second-separator {
+    height: 3px;
+    width: 20%;
+    border-radius: 10px;
+    background-color: #BBBBBB;
+}
+
+/* FORM CONTAINER START*/
+
+form {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.date-input {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 2px solid #375DA5;
+    outline: none;
+    width: 250px;
+}
+
+
+
+
+.notice-input {
+    color: #666666;
+    padding: 10px 0 30px 0;
+}
+
+.date-form {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    min-width: 300px;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.date-form-input {
+    display: flex;
+    width: 45%;
+    min-width: 300px;
+    flex-direction: column;
+}
+
+
+.btn-form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* FORM CONTAINER END*/
+
+
+@media screen and (max-width: 670px) {
+    .date-form {
+        justify-content: center;
+    }
+
+    .date-form-input {
+        width: 80%;
+    }
+}

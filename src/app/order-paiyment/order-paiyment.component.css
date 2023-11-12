@@ -1,0 +1,65 @@
+
+.order-process-bar {
+    padding: 40px 0 60px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    width: 80%;
+}
+
+.order-process-bar-title {
+    color: #BBBBBB;
+    font-size: 1rem;
+}
+
+.order-process-bar > #basket {
+    color: #375DA5;
+    font-size: 1.5rem;
+}
+
+.order-process-bar > #infos {
+    color: #375DA5;
+    font-size: 1.5rem;
+}
+
+#first-separator {
+    height: 3px;
+    width: 20%;
+    border-radius: 10px;
+    background-color: #375DA5;
+}
+
+#second-separator {
+    height: 3px;
+    width: 20%;
+    border-radius: 10px;
+    background-color: #375DA5;
+}
+
+
+
+.block {
+    background-color: red;
+    margin: auto;
+    width: 90%;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item {
+    margin: 10px;
+    width: 40%;
+    height: 90%;
+    background-color: blue;
+}
+
+#credit-card {
+    position: absolute;
+    height: 300px;
+    width: 300px;
+    top: 50%;
+    right: 0%;
+}

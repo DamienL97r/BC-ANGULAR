@@ -1,0 +1,54 @@
+
+<aside class="container-basket scroller">
+    <h2>Mon panier</h2>
+
+    <button *ngIf="calculateBasketTotalPrice() !== '0.00'" (click)="clearBasket()"> Vider le panier</button>
+
+
+    <!-- Si le panier est vide-->
+    <div *ngIf="calculateBasketTotalPrice() === '0.00'" class="empty-basket">
+        <img src="../../assets/INC/IMG/Icones/empty-basket.png" alt="empty basket">
+        <h2>Mince...</h2>
+        <p>Votre panier est vide !</p>
+        <p></p>
+    </div>
+    
+
+
+    <form [formGroup]="orderForm" (ngSubmit)="onSubmit()">
+
+        <div *ngFor="let data of formData; let i = index" class="basket-item-card">
+
+            <div class="basket-item-title-icons">
+                <h3>{{ data.articleData.name }}</h3>
+                <div class="basket-item-icons">
+                    <img id="update-logo" src="../../assets/INC/IMG/Icones/edition.png" alt="logo update">
+                    <img (click)="removeItem(i)" id="delete-logo" src="../../assets/INC/IMG/Icones/poubelle-de-recyclage.png" alt="logo delete">
+                </div>
+            </div>
+
+            <p>Quantité : {{data.quantity}}</p>
+    
+            <p>Service(s) :</p>
+            <ul *ngFor="let service of data.services">
+                <li>{{ service.name }}</li>
+            </ul>
+    
+            <p>Remarques : {{ data.message }} </p>
+
+            <h3>Prix : {{ data.itemTotalPrice | currency: 'EUR' }} </h3>
+
+            <hr class="basket-item-separator">
+        </div>
+
+        <div *ngIf="calculateBasketTotalPrice() !== '0.00'" class="basket-btn-total-price">
+            <h2>TOTAL : {{calculateBasketTotalPrice() | currency: 'EUR' }}</h2>
+            <button class="main-btn" >Valider le panier</button>
+        </div>
+        
+
+    </form>
+
+
+    
+</aside>

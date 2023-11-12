@@ -1,0 +1,27 @@
+<p>my-account works!</p>
+
+<p>{{ currentUser.id}}</p>
+<p>{{ currentUser.gender}}</p>
+<p>{{ currentUser.firstname }}</p>
+<p>{{ currentUser.lastname}}</p>
+
+<p>{{ currentUser.adresse}}</p>
+<p>{{ currentUser.roles}}</p>
+
+<h2>Historique de commande :</h2>
+
+
+<div *ngFor="let order of currentUser.orders">
+    <h3>Commande N°{{order.id}}</h3>
+    <p>{{ order.totalPrice }}</p>
+    <p>{{ order.createdDate | date:'fullDate'}}</p>
+</div>
+
+
+
+
+
+<button (click)="logout()">Déconnexion</button>
+
+
+

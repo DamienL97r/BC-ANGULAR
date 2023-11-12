@@ -1,0 +1,80 @@
+/*QUI SOMMES NOUS ? SECTION START*/
+
+.title-container-half{
+    width: 60%;
+    text-align: center;
+    margin: 50px 0;
+}
+
+.main-container-text-img{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-bottom: 5%;
+}
+
+#first-main-container-text-img{
+    flex-wrap: wrap-reverse;
+}
+
+.container-text{
+    width: 50%;
+}
+
+.container-img {
+    width: 500px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.container-img > img {
+    width: 100%;
+    margin-bottom: 30px;
+}
+/*QUI SOMMES NOUS ? SECTION END*/
+
+/*NOS ENGAGEMENTS SECTION START*/
+
+.title-container-full{
+    text-align: center;
+}
+
+.column-3-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.commitment {
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 300px;
+}
+
+.commitment > img {
+    height: 100px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+.commitment > h3 {
+    text-align: center;
+    padding: 20px 0;
+}
+
+@media screen and (max-width: 1000px) {
+    .title-container-half{
+        width: 100%;
+        text-align: center;
+        margin: 50px 0;
+    }
+
+    .container-text{
+        width: 80%;
+    }
+}
+/*NOS ENGAGEMENTS SECTION END*/

@@ -1,0 +1,183 @@
+
+
+.hamburger-menu {
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+  
+.hamburger-menu-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: white;
+    position: fixed;
+    right: 0;
+    top: 0;
+    padding: 0px;
+    border: 1px solid #ccc;
+    border-radius: 0px 0px 0px 20px;
+    width: 100%;
+    height: 90vh;
+    animation-duration: 1.5s;
+    animation-name: slidein;
+}
+
+.hamburger-menu-content > img {
+    margin: -80px auto;
+    height: 200px;
+    width: fit-content;
+}
+
+.hamburger-menu-content > .tab-resp {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.hamburger-menu-content > .tab-resp > a {
+    text-decoration: none;
+    color: black;
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.163);
+}
+
+.hamburger-menu-content > .tab-resp > a:hover {
+    text-decoration: none;
+    color: black;
+    padding: 18px 0;
+    background-color: rgba(0, 0, 0, 0.066);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.459);
+    transition: all 0.3s ease-in-out;
+}
+
+.resp-basket-connexionInscription {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.resp-basket-connexionInscription > .resp-basket > a > img {
+    width: 35px;
+    margin-bottom: 6px;
+    margin-right: 13px;
+}
+
+.resp-basket-connexionInscription > .resp-basket > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    width: 240px;
+    margin-left: 5px;
+}
+
+.resp-basket-connexionInscription > .resp-basket{
+    position: relative;
+    width: 250px;
+    padding: 15px 0;
+    text-align: center;
+}
+
+.resp-basket-connexionInscription > .resp-basket > .basket-item-counter {
+    position: absolute;
+    top: 10px;
+    left: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    height: 20px;
+    width: 20px;
+    background-color: red;
+    color: white;
+    font-weight: 800;
+    font-size: 12px;
+}
+
+.resp-basket-connexionInscription > .resp-connexionInscription{
+    position: relative;
+    width: 250px;
+    padding: 15px 0;
+    text-align: center;
+}
+
+.resp-basket-connexionInscription > .resp-connexionInscription > a > img {
+    width: 35px;
+    margin-bottom: 6px;
+    margin-right: 10px;
+}
+
+.resp-basket-connexionInscription > .resp-connexionInscription > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    width: 240px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.resp-bran-copyright{
+    font-size: 0.7rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.resp-bran-copyright > a {
+    text-decoration: none;
+    color: black;
+    margin: 0 5px ;
+}
+ 
+.close-hamburger-menu {
+    cursor: pointer;
+    color: #63A4C7;
+    position: fixed;
+    right: 7%;
+    top: 2%;
+    float: right;
+    font-size: 35px;
+    font-weight: bold;
+    text-decoration: none;
+    animation-duration: 4s;
+    animation-name: fadein;
+}
+  
+.close-hamburger-menu:hover {
+    color: #375DA5;
+    transition: all 0.3s ease-in-out;
+}
+
+/*ANIMATION HAMBURGER MENU*/
+
+@keyframes slidein {
+    from {
+      opacity: 0.5;
+      right: -800px;
+    }
+  
+    to {
+      opacity: 1;
+      right: 0;
+    }
+}    
+
+@keyframes fadein {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+}
