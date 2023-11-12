@@ -12,6 +12,10 @@ import { MyAccountComponent } from './my-account/my-account.component';
 import { OrderSummaryComponent } from './order-summary/order-summary.component';
 import { OrderInformationsComponent } from './order-informations/order-informations.component';
 import { OrderPaiymentComponent } from './order-paiyment/order-paiyment.component';
+import { ArticlesComponent } from './DashboardComponent/articles/articles.component';
+import { OrdersComponent } from './DashboardComponent/orders/orders.component';
+import { ServicesComponent } from './DashboardComponent/services/services.component';
+import { UsersComponent } from './DashboardComponent/users/users.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
@@ -24,6 +28,10 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent, canActivate: [AuthGuard]},
   { path: 'connexion-inscription', component: SignUpInComponent},
   { path: 'admin/dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
+  { path: 'admin/articles', component: ArticlesComponent, canActivate: [AuthGuard]},
+  { path: 'admin/commandes', component: OrdersComponent, canActivate: [AuthGuard]},
+  { path: 'admin/services', component: ServicesComponent, canActivate: [AuthGuard]},
+  { path: 'admin/utilisateurs', component: UsersComponent, canActivate: [AuthGuard]},
   { path: '**', component: Error404Component}
 ];
 

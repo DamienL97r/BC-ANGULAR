@@ -1,0 +1,25 @@
+<div class="admin-page">
+    <app-nav-admin></app-nav-admin>
+
+    <h1>Article</h1>
+
+    <form [formGroup]="createArticle" (ngSubmit)="onSubmit()">
+        <div>
+            <label for="">Nom</label>
+            <input formControlName="name" type="text">
+        </div>
+
+        <div>
+            <label for="">Prix</label>
+            <input formControlName="price" type="number">
+        </div>
+
+        <div>
+            <label for="description">Description</label>
+            <textarea formControlName="description" id="" cols="30" rows="10">Décrivez l'article.</textarea>
+        </div>
+
+        <button class="btn btn-primary">Envoyer</button>
+    </form>
+</div>
+

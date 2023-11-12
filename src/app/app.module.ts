@@ -33,6 +33,11 @@ import { OrderInformationsComponent } from './order-informations/order-informati
 import { OrderPaiymentComponent } from './order-paiyment/order-paiyment.component';
 import { TokenInterceptor } from './token-interceptor.interceptor';
 import { ThankPageComponent } from './thank-page/thank-page.component';
+import { ArticlesComponent } from './DashboardComponent/articles/articles.component';
+import { NavAdminComponent } from './DashboardComponent/nav-admin/nav-admin.component';
+import { OrdersComponent } from './DashboardComponent/orders/orders.component';
+import { ServicesComponent } from './DashboardComponent/services/services.component';
+import { UsersComponent } from './DashboardComponent/users/users.component';
 
 registerLocaleData(localeFr);
 
@@ -63,6 +68,11 @@ registerLocaleData(localeFr);
     OrderInformationsComponent,
     OrderPaiymentComponent,
     ThankPageComponent,
+    ArticlesComponent,
+    NavAdminComponent,
+    OrdersComponent,
+    ServicesComponent,
+    UsersComponent,
   ],
   imports: [
     BrowserModule,

@@ -60,3 +60,25 @@
 }
 
 /*GLOBAL BTN END*/
+
+
+/*ADMIN SECTION START*/
+
+.admin-page {
+    background-color: red;
+    display: flex;
+}
+
+.admin-nav {
+    background-color: #0080c5;
+    height: 88vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-nav > .admin-nav-item {
+    padding: 15px 30px;
+    border-bottom: 2px solid white;
+}
+
+/*ADMIN SECTION END*/
