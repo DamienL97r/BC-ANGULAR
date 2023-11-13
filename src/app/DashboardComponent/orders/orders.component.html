@@ -18,7 +18,6 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- Vous pouvez répéter la structure suivante pour chaque utilisateur -->
                     <tr *ngFor="let order of orders">
                         <td>{{ order.id }}</td>
                         <td>{{ order.createdDate | date: "dd/MM/YYYY" }}</td>
@@ -28,7 +27,6 @@
                         <td>{{ order.totalPrice | currency: 'EUR' }}</td>
                         <td>{{ order.userId }}</td>
                     </tr>
-                    <!-- Fin de la répétition -->
                 </tbody>
             </table>
         </div>
