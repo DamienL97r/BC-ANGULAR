@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { IOrder } from './interfaces/iorder';
 import { AuthService } from './auth.service';
+import { IUser } from './interfaces/iuser';
 
 @Injectable({
   providedIn: 'root'
