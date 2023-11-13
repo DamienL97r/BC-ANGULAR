@@ -1,5 +1,30 @@
 <div class="admin-page">
     <app-nav-admin></app-nav-admin>
 
-    <h1>Services</h1>
+    <div class="admin-body-container">
+        <h1>Services</h1>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Titre</th>
+                        <th>Prix</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Vous pouvez répéter la structure suivante pour chaque utilisateur -->
+                    <tr *ngFor="let service of services">
+                        <td>{{ service.id }}</td>
+                        <td>{{ service.name }}</td>
+                        <td>{{ service.price | currency: 'EUR' }}</td>
+                        <td>{{ service.description }}</td>
+                    </tr>
+                    <!-- Fin de la répétition -->
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>

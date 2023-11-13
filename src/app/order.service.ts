@@ -16,11 +16,8 @@ export class OrderService {
     return this.http.post<IOrder>(this.url+'/orders', newOrder);
   }
 
-  getOrder() {
+  findAll() {
     return this.http.get<IOrder[]>("http://localhost:8000/api/orders");
   }
 
-  findByUserId() {
-    return this.http.get<IOrder[]>(this.url+'/orders/user/'+this.authService.getUserId)
-  }
 }

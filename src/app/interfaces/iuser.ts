@@ -2,6 +2,7 @@ import { IOrder } from "./iorder";
 
 export interface IUser {
     id?:number;
+    email: string;
     firstname:string;
     lastname:string;
     birthdate?: Date;

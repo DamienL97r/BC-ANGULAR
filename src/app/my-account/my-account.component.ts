@@ -12,6 +12,7 @@ export class MyAccountComponent implements OnInit{
 
   currentUser: IUser = {
     id: 0,
+    email:'',
     username: '',
     firstname: '',
     lastname: '',

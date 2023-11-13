@@ -20,6 +20,10 @@ export class AuthService {
     return this.http.post<IUser>(this.url+'/users', user);
   }
 
+  findAll() {
+    return this.http.get<IUser[]>(this.url+'/users');
+  }
+
   login(credentials:any):Observable<IToken>{
     return this.http.post<IToken>(this.url+'/login', credentials);
   }

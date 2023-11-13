@@ -1,5 +1,35 @@
 <div class="admin-page">
     <app-nav-admin></app-nav-admin>
 
-    <h1>Utilisateurs</h1>
+
+    <div class="admin-body-container">
+        <h1>Utilisateurs</h1>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Email</th>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>Date de Naissance</th>
+                        <th>Adresse</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Vous pouvez répéter la structure suivante pour chaque utilisateur -->
+                    <tr *ngFor="let user of users">
+                        <td>{{ user.id }}</td>
+                        <td>{{ user.email }}</td>
+                        <td>{{ user.lastname }}</td>
+                        <td>{{ user.firstname }}</td>
+                        <td>{{ user.birthdate | date: "dd/MM/YYYY" }}</td>
+                        <td>{{ user.adresse }}</td>
+                    </tr>
+                    <!-- Fin de la répétition -->
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>

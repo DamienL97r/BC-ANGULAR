@@ -1,25 +1,53 @@
 <div class="admin-page">
     <app-nav-admin></app-nav-admin>
 
-    <h1>Article</h1>
+    <div class="admin-body-container">
+        <h1>Articles</h1>
 
-    <form [formGroup]="createArticle" (ngSubmit)="onSubmit()">
-        <div>
-            <label for="">Nom</label>
-            <input formControlName="name" type="text">
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Titre</th>
+                        <th>Prix</th>
+                        <th>Description</th>
+                        <th>Image</th>
+                        <th>Catégorie</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let article of articles">
+                        <td>{{ article.id }}</td>
+                        <td>{{ article.name }}</td>
+                        <td>{{ article.price | currency: 'EUR' }}</td>
+                        <td>{{ article.description }}</td>
+                        <td>{{ article.id }}</td>
+                        <td>{{ article.id }}</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
+    
+        <form [formGroup]="createArticle" (ngSubmit)="onSubmit()">
+            <div>
+                <label for="">Nom</label>
+                <input formControlName="name" type="text">
+            </div>
+    
+            <div>
+                <label for="">Prix</label>
+                <input formControlName="price" type="number">
+            </div>
+    
+            <div>
+                <label for="description">Description</label>
+                <textarea formControlName="description" id="" cols="30" rows="10">Décrivez l'article.</textarea>
+            </div>
+    
+            <button class="btn btn-primary">Envoyer</button>
+        </form>
+    </div>
 
-        <div>
-            <label for="">Prix</label>
-            <input formControlName="price" type="number">
-        </div>
-
-        <div>
-            <label for="description">Description</label>
-            <textarea formControlName="description" id="" cols="30" rows="10">Décrivez l'article.</textarea>
-        </div>
-
-        <button class="btn btn-primary">Envoyer</button>
-    </form>
 </div>
 

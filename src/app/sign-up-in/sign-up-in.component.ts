@@ -66,6 +66,7 @@ export class SignUpInComponent implements OnInit{
   isAdmin: boolean = this.serviceAuth.isAdmin();
   currentUser: IUser = {
     id: 0,
+    email: '',
     username: '',
     firstname: '',
     lastname: '',

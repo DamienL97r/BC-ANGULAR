@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { IService } from 'src/app/interfaces/iservice';
+import { ServicesService } from 'src/app/services.service';
 
 @Component({
   selector: 'app-services',
@@ -7,4 +9,16 @@ import { Component } from '@angular/core';
 })
 export class ServicesComponent {
 
+  constructor (private service: ServicesService) {}
+  ngOnInit(): void {
+    this.getServices();
+  }
+
+  services: IService[] = [];
+
+  getServices() {
+    this.service.findAll().subscribe((data: IService[]) => {
+      this.services = data;
+    })
+  }
 }
