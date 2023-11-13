@@ -103,4 +103,19 @@ export class AuthService {
       return false;
     }
   }
+
+    // Vérifier si l'utilisateur est super admin
+
+    isSuperAdmin(): boolean {
+      const userRoles = this.getRole();
+      console.log(userRoles);
+      
+      if (userRoles && Array.isArray(userRoles)) {
+        const isSuperAdmin = userRoles.includes('ROLE_SUPER_ADMIN');
+        return isSuperAdmin;
+
+      } else {
+        return false;
+      }
+    }
 }
