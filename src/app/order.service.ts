@@ -20,4 +20,8 @@ export class OrderService {
     return this.http.get<IOrder[]>("http://localhost:8000/api/orders");
   }
 
+  findOneById(id: any) {
+    return this.http.get<IOrder>(this.url+'/orders/'+id);
+  }
+
 }

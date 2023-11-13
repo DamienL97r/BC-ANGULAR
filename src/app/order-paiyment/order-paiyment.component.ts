@@ -5,7 +5,6 @@ import { Router } from '@angular/router';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { OrderService } from '../order.service';
 import { IOrder } from '../interfaces/iorder';
-import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-order-paiyment',

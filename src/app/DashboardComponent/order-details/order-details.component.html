@@ -1,0 +1,11 @@
+<div class="admin-page">
+    <app-nav-admin></app-nav-admin>
+
+    <div class="admin-body-container">
+        <h1>Détails Commande n° {{ order.id }}</h1>
+
+        <p>Créé le {{ order.createdDate | date: "fullDate"}}</p>
+
+        <p>Prix {{ order.totalPrice | currency: 'EUR' }}</p>
+    </div>
+</div>

@@ -19,13 +19,17 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let order of orders">
-                        <td>{{ order.id }}</td>
+                        <td>
+                            <a routerLink="/admin/commandes/{{ order.id }}">{{ order.id }}</a>
+                        </td>
                         <td>{{ order.createdDate | date: "dd/MM/YYYY" }}</td>
                         <td>{{ order.depositDate | date: "dd/MM/YYYY" }}</td>
                         <td>{{ order.retrievalDate | date: "dd/MM/YYYY" }}</td>
                         <td>{{ order.paymentType }}</td>
                         <td>{{ order.totalPrice | currency: 'EUR' }}</td>
-                        <td>{{ order.userId }}</td>
+                        <td>
+                            <a routerLink="/admin/commandes"> {{ order.userId.id }}</a>
+                        </td>
                     </tr>
                 </tbody>
             </table>

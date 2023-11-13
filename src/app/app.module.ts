@@ -39,6 +39,7 @@ import { OrdersComponent } from './DashboardComponent/orders/orders.component';
 import { ServicesComponent } from './DashboardComponent/services/services.component';
 import { UsersComponent } from './DashboardComponent/users/users.component';
 import { DashboardMyAccountComponent } from './DashboardComponent/dashboard-my-account/dashboard-my-account.component';
+import { OrderDetailsComponent } from './DashboardComponent/order-details/order-details.component';
 
 registerLocaleData(localeFr);
 
@@ -75,6 +76,7 @@ registerLocaleData(localeFr);
     ServicesComponent,
     UsersComponent,
     DashboardMyAccountComponent,
+    OrderDetailsComponent,
   ],
   imports: [
     BrowserModule,
