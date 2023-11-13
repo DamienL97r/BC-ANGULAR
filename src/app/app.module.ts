@@ -38,6 +38,7 @@ import { NavAdminComponent } from './DashboardComponent/nav-admin/nav-admin.comp
 import { OrdersComponent } from './DashboardComponent/orders/orders.component';
 import { ServicesComponent } from './DashboardComponent/services/services.component';
 import { UsersComponent } from './DashboardComponent/users/users.component';
+import { DashboardMyAccountComponent } from './DashboardComponent/dashboard-my-account/dashboard-my-account.component';
 
 registerLocaleData(localeFr);
 
@@ -73,6 +74,7 @@ registerLocaleData(localeFr);
     OrdersComponent,
     ServicesComponent,
     UsersComponent,
+    DashboardMyAccountComponent,
   ],
   imports: [
     BrowserModule,

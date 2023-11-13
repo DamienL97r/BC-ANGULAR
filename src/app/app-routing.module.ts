@@ -16,6 +16,7 @@ import { ArticlesComponent } from './DashboardComponent/articles/articles.compon
 import { OrdersComponent } from './DashboardComponent/orders/orders.component';
 import { ServicesComponent } from './DashboardComponent/services/services.component';
 import { UsersComponent } from './DashboardComponent/users/users.component';
+import { DashboardMyAccountComponent } from './DashboardComponent/dashboard-my-account/dashboard-my-account.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
@@ -32,6 +33,7 @@ const routes: Routes = [
   { path: 'admin/commandes', component: OrdersComponent, canActivate: [AuthGuard]},
   { path: 'admin/services', component: ServicesComponent, canActivate: [AuthGuard]},
   { path: 'admin/utilisateurs', component: UsersComponent, canActivate: [AuthGuard]},
+  { path: 'admin/mon-compte', component: DashboardMyAccountComponent, canActivate: [AuthGuard]},
   { path: '**', component: Error404Component}
 ];
 
