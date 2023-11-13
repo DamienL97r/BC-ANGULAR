@@ -63,6 +63,7 @@ export class SignUpInComponent implements OnInit{
   showFormConnexion:boolean = false;
   showBtn:boolean = false;
   isLogged: boolean = this.serviceAuth.isLogged();
+  isAdmin: boolean = this.serviceAuth.isAdmin();
   currentUser: IUser = {
     id: 0,
     username: '',

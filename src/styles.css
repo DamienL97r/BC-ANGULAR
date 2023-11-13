@@ -65,12 +65,12 @@
 /*ADMIN SECTION START*/
 
 .admin-page {
-    background-color: red;
     display: flex;
 }
 
 .admin-nav {
-    background-color: #0080c5;
+    border-right: 2px solid #375DA5;
+    background-color: #375DA5;
     height: 88vh;
     display: flex;
     flex-direction: column;
@@ -78,7 +78,13 @@
 
 .admin-nav > .admin-nav-item {
     padding: 15px 30px;
-    border-bottom: 2px solid white;
+    border-bottom: 1px solid white;
+}
+
+.admin-nav > .admin-nav-item > a {
+    color: white;
+    font-size: 1.1rem;
+    text-decoration: none;
 }
 
 /*ADMIN SECTION END*/
