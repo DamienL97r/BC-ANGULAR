@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CalendarEvent, CalendarView } from 'angular-calendar';
+import { CalendarEvent, CalendarView, DAYS_OF_WEEK } from 'angular-calendar';
 import { isSameDay, isSameMonth } from 'date-fns';
 import { IOrder } from 'src/app/interfaces/iorder';
 import { OrderService } from 'src/app/order.service';
@@ -39,6 +39,12 @@ export class OrdersComponent implements OnInit{
   CalendarView = CalendarView;
 
   events: CalendarEvent<IOrder>[] = [];
+
+  locale: string = 'fr';
+
+  excludeDays: number[] = [0, 6];
+
+  weekStartsOn = DAYS_OF_WEEK.SUNDAY;
 
   activeDayIsOpen: boolean = false;
 
