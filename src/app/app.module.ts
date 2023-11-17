@@ -40,11 +40,22 @@ import { ServicesComponent } from './DashboardComponent/services/services.compon
 import { UsersComponent } from './DashboardComponent/users/users.component';
 import { DashboardMyAccountComponent } from './DashboardComponent/dashboard-my-account/dashboard-my-account.component';
 import { OrderDetailsComponent } from './DashboardComponent/order-details/order-details.component';
-import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { CalendarDateFormatter, CalendarModule, CalendarNativeDateFormatter, DateAdapter, DateFormatterParams } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 registerLocaleData(localeFr);
+
+class CustomDateFormatter extends CalendarNativeDateFormatter {
+  public override dayViewHour({ date, locale }: DateFormatterParams): string {
+    return new Intl.DateTimeFormat(locale, {hour: 'numeric', minute: 'numeric'}).format(date);
+  }
+
+  public override weekViewHour({ date, locale }: DateFormatterParams): string {
+    return new Intl.DateTimeFormat(locale, {hour: 'numeric', minute: 'numeric'}).format(date);
+  }
+
+}
 
 @NgModule({
   declarations: [
@@ -90,6 +101,7 @@ registerLocaleData(localeFr);
     CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory })
   ],
   providers: [
+    { provide: CalendarDateFormatter, useClass: CustomDateFormatter},
     { provide: LOCALE_ID, useValue: 'fr-FR'},
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true}

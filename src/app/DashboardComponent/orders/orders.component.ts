@@ -1,8 +1,27 @@
 import { Component, OnInit } from '@angular/core';
-import { CalendarEvent, CalendarView, DAYS_OF_WEEK } from 'angular-calendar';
+import { CalendarEvent, CalendarView, DAYS_OF_WEEK, DateAdapter } from 'angular-calendar';
 import { isSameDay, isSameMonth } from 'date-fns';
 import { IOrder } from 'src/app/interfaces/iorder';
 import { OrderService } from 'src/app/order.service';
+
+import { EventColor } from 'calendar-utils';
+import { Router } from '@angular/router';
+import { DatePipe } from '@angular/common';
+import { CalendarDatePipe } from 'angular-calendar/modules/common/calendar-date/calendar-date.pipe';
+const colors: Record<string, EventColor> = {
+  red: {
+    primary: '#ad2121',
+    secondary: '#FAE3E3',
+  },
+  blue: {
+    primary: '#1e90ff',
+    secondary: '#D1E8FF',
+  },
+  yellow: {
+    primary: '#e3bc08',
+    secondary: '#FDF1BA',
+  },
+};
 
 @Component({
   selector: 'app-orders',
@@ -12,22 +31,73 @@ import { OrderService } from 'src/app/order.service';
 export class OrdersComponent implements OnInit{
 
 
-  constructor (private service: OrderService) {}
+  constructor (private service: OrderService, private router: Router) {}
 
   ngOnInit(): void {
     this.getOrders();
   }
 
   orders: IOrder[] = [];
+  isCliked: boolean = false;
+  calendar:boolean = true;
+  list:boolean = false;
+  title:string = 'Liste';
+
+  displayCalendar() {
+    this.calendar = !this.calendar;
+    this.title = 'Calendrier';
+    if (this.isCliked === false) {
+      this.isCliked = !this.isCliked;
+    }
+    console.log('CAL'+this.calendar);
+    
+  }
+
+  displayList() {
+    this.list = !this.list;
+    this.title = 'Liste';
+    if (this.isCliked === true) {
+      this.isCliked = !this.isCliked;
+    }
+    console.log('LISTE'+ this.list);
+    
+  }
+
+  // displayOrderItem(){
+  //   this.displayItem = !this.displayItem;
+  //   if (this.displayItem === true) {
+  //     this.btnContent = 'Calendrier';
+  //     this.title = 'Liste';
+  //   } else {
+  //     this.btnContent = 'Calendrier';
+  //     this.title = 'Liste';
+  //   }
+  // }
 
   getOrders() {
     this.service.findAll().subscribe((data: IOrder[]) => {
       this.orders = data;
-      this.events = this.orders.map(order => ({
-        title: "Commande n° " + order.id + " | " + order.userId.email,
-        start: new Date(order.depositDate),
-        end: new Date(order.retrievalDate),
-      }));
+  
+      this.events = this.orders.map(order => {
+        const depositDateFormatted = new Intl.DateTimeFormat('fr-FR', {
+          year: 'numeric',
+          month: 'long',
+          day: '2-digit',
+        }).format(new Date(order.depositDate));
+  
+        const retrievalDateFormatted = new Intl.DateTimeFormat('fr-FR', {
+          year: 'numeric',
+          month: 'long',
+          day: '2-digit',
+        }).format(new Date(order.retrievalDate));
+  
+        return {
+          title: `Commande n° ${order.id} | ${order.userId.email}</br> Date de dépot : ${depositDateFormatted} </br> Date de retrait : ${retrievalDateFormatted}`,
+          start: new Date(order.depositDate),
+          color: { ...colors['blue'] },
+          id: order.id,
+        };
+      });
     });
   }
 
@@ -35,7 +105,7 @@ export class OrdersComponent implements OnInit{
   //Calendrier 
 
   viewDate: Date = new Date();
-  view: CalendarView = CalendarView.Week;
+  view: CalendarView = CalendarView.Month;
   CalendarView = CalendarView;
 
   events: CalendarEvent<IOrder>[] = [];
@@ -63,5 +133,10 @@ export class OrdersComponent implements OnInit{
         }
         this.viewDate = date;
     }
+  }
+
+  eventClicked(event: any) {
+    console.log(event.event);
+    // this.router.navigate(['/admin/commandes/' + event.event.id]);
   }
 }

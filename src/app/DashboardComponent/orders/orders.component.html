@@ -2,14 +2,29 @@
     <app-nav-admin></app-nav-admin>
 
     <div class="admin-body-container">
-        <h1>Commandes</h1>
 
-        <div class="table-container">
+        <div class="order-nav">
+
+            <div [class.btn-order-nav-clicked]="!isCliked" (click)="displayList()" class="btn-order-nav">
+                <img src="../../../assets/INC/IMG/Icones/liste-a-puces.png" alt="">
+                <button>Liste</button>
+            </div>
+
+            <div [class.btn-order-nav-clicked]="isCliked" (click)="displayCalendar()" class="btn-order-nav">
+                <img src="../../../assets/INC/IMG/Icones/calendrier.png" alt="">
+                <button>Calendrier</button>
+            </div>
+            
+        </div>
+
+        <h1>Commandes - {{ title }}</h1>
+
+        <div *ngIf="title === 'Liste'" class="table-container">
             <table>
                 <thead>
                     <tr>
+                        <th> </th>
                         <th>ID</th>
-                        <th>Date de création</th>
                         <th>Date de dépot</th>
                         <th>Date de retrait</th>
                         <th>Type de paiement</th>
@@ -20,9 +35,11 @@
                 <tbody>
                     <tr *ngFor="let order of orders">
                         <td>
+                            <a routerLink="/admin/commandes/{{ order.id }}"><img class="admin-icon-eye" src="../../../assets/INC/IMG/Icones/oeil.png" alt=""></a>
+                        </td>
+                        <td>
                             <a routerLink="/admin/commandes/{{ order.id }}">{{ order.id }}</a>
                         </td>
-                        <td>{{ order.createdDate | date: "dd/MM/YYYY" }}</td>
                         <td>{{ order.depositDate | date: "dd/MM/YYYY" }}</td>
                         <td>{{ order.retrievalDate | date: "dd/MM/YYYY" }}</td>
                         <td>{{ order.paymentType }}</td>
@@ -36,9 +53,9 @@
         </div>
 
 
-        <h2>Calendrier</h2>
+        <div *ngIf="title === 'Calendrier'" class="custom-calendar-container">
 
-        <div id="calendar-container">
+        <div  id="calendar-container">
             <div id="cal-buttons">
                 <div id="cal-date-nav-buttons">
                     <button id="previous" mwlCalendarPreviousView [(viewDate)]="viewDate" [view]="view">Précédent</button>
@@ -46,15 +63,14 @@
                     <button id="next" mwlCalendarNextView [(viewDate)]="viewDate" [view]="view">Suivant</button>
                 </div>
 
-                <div id="cal-date-field">{{ viewDate | date: 'fullDate'}}</div> 
+                <div id="cal-date-field">{{ viewDate | date: 'MMMM YYYY'}}</div> 
                 <!-- {{ viewDate | calendarDate:(view + 'viewTitle') : 'en'}} -->
 
                 <div id="cal-view-nav-buttons">
-                    <button (click)="setView(CalendarView.Month)" id="month" >Mois</button>
-                    <button (click)="setView(CalendarView.Week)" id="week" >Semaines</button>
-                    <button (click)="setView(CalendarView.Day)" id="day" >Jours</button>
                 </div>
             </div>
+
+
 
             <span [ngSwitch]="view">
                 <mwl-calendar-month-view 
@@ -66,6 +82,7 @@
                     [locale]="locale"
                     [weekStartsOn]="weekStartsOn"
                     [excludeDays]="excludeDays"
+                    (eventClicked)="eventClicked($event)"
                 ></mwl-calendar-month-view>
 
                 <mwl-calendar-week-view 
@@ -77,6 +94,7 @@
                 [locale]="locale"
                 [weekStartsOn]="weekStartsOn"
                 [excludeDays]="excludeDays"
+                (eventClicked)="eventClicked($event)"
                 ></mwl-calendar-week-view>
 
                 <mwl-calendar-day-view 
@@ -86,12 +104,12 @@
                 [dayStartHour]="9"
                 [dayEndHour]="17"
                 [locale]="locale"
+                (eventClicked)="eventClicked($event)"
                 ></mwl-calendar-day-view>
             </span>
-            
         </div>
 
-        
+        </div>
     </div>
 </div>
 

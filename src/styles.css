@@ -3,6 +3,23 @@
 @import "../node_modules/angular-calendar/css/angular-calendar.css";
 
 
+/*CALENDAR START */
+
+.cal-week-view {
+    border: 2px solid #63A4C7 !important;
+    border-radius: 10px !important;
+    padding: 10px 10px;
+}
+
+.cal-month-view {
+    border: 2px solid #63A4C7 !important;
+    border-radius: 10px !important;
+    padding: 10px 10px;
+}
+
+
+/*CALENDAR END */
+
 /* GLOBAL*/
 
 * {
@@ -92,7 +109,9 @@
     flex-direction: column;
 }
 
-
+.admin-body-container > h1 {
+    margin-top: 70px;
+}
 
 table {
     border-collapse: collapse;
@@ -106,8 +125,18 @@ th, td {
     padding: 8px;
 }
 
+td > a > img {
+    height: 20px;
+    padding: 5px;
+    transition: all 0.2s ease-in-out;
+}
+td > a > img:hover {
+
+    border-radius: 8px;
+    background-color: #63A4C7;
+}
+
 th {
     background-color: #f2f2f2;
 }
-
 /*ADMIN SECTION END*/

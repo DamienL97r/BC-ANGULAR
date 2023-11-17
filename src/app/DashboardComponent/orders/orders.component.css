@@ -1,0 +1,128 @@
+
+
+
+.order-nav {
+    position: absolute;
+    width: 70%;
+    display: flex;
+    justify-content: left;
+    margin: 5px;
+}
+
+.btn-order-nav {
+    padding: 10px 20px;
+    background-color: #63A4C7;
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-order-nav:hover {
+    background-color: #63a4c791;
+    cursor: pointer;
+}
+
+.btn-order-nav-clicked {
+    background-color: #375DA5;
+}
+
+.btn-order-nav > button {
+    background-color: transparent;
+    border: none;
+    font-size: 1.3rem;
+    padding: 0 20px;
+    font-weight: 800;
+    color: white;
+}
+
+.btn-order-nav > button:hover {
+    cursor: pointer;
+}
+
+.btn-order-nav > img {
+    height: 30px;
+    width:  30px;
+}
+
+.custom-calendar-container {
+    padding: 20px;
+}
+
+.custom-calendar-container > h2 {
+    text-align: center;
+    margin: 50px 0 10px 0;
+}
+#calendar-container {
+    width: 1200px;
+    padding: 0 20px 20px 20px;
+}
+
+#cal-buttons {
+    padding: 10px 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+#cal-date-nav-buttons {
+    height: fit-content;
+    border-radius: 5px ;
+    overflow: hidden;
+}
+
+#cal-date-nav-buttons > button {
+    padding: 5px 10px;
+    border: 2px solid transparent;
+    background-color: #63A4C7;
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+#cal-date-nav-buttons > button:active {
+    border: 2px solid #63A4C7;
+    background-color: white;
+    color: #63A4C7;
+}
+
+#cal-date-nav-buttons > button:hover {
+    border: 2px solid #63A4C7;
+    background-color: white;
+    color: #63A4C7;
+}
+
+#cal-view-nav-buttons > button {
+    margin: 3px;
+    padding: 5px 10px;
+    border: 2px solid transparent;
+    background-color: #63A4C7;
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#cal-view-nav-buttons > button:active {
+    border: 2px solid #63A4C7;
+    background-color: white;
+    color: #63A4C7;
+}
+
+#cal-view-nav-buttons > button:hover {
+    border: 2px solid #63A4C7;
+    background-color: white;
+    color: #63A4C7;
+} 
+
+#cal-date-field {
+    width: fit-content;
+    font-size: 1.2rem;
+    font-weight: 800;
+    padding: 10px 30px;
+    border: 2px solid #63A4C7 ;
+    border-radius: 12px;
+    color: #63A4C7;
+}
+
