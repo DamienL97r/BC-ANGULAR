@@ -9,13 +9,14 @@ import { IUser } from './interfaces/iuser';
 })
 export class OrderService {
 
-  constructor(private http: HttpClient, private authService: AuthService) { }
+  constructor(private http: HttpClient) { }
 
   url:string = "http://localhost:8000/api"
 
   add(newOrder: IOrder) {
     return this.http.post<IOrder>(this.url+'/orders', newOrder);
   }
+
 
   findAll() {
     return this.http.get<IOrder[]>("http://localhost:8000/api/orders");

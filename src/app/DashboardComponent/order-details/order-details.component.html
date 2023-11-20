@@ -8,6 +8,36 @@
 
         <p>Prix {{ order.totalPrice | currency: 'EUR' }}</p>
 
+        <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Article</th>
+                <th>Quantité</th>
+                <th>Services</th>
+                <th>Total Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let itemSelection of order.selection; let i = index">
+                <td>{{ i + 1 }}</td>
+                <td>{{ itemSelection.articleData.name }}</td>
+                <td>{{ itemSelection.quantity }}</td>
+                <td>
+                  <ng-container *ngIf="itemSelection.services.length > 1; else singleService">
+                    <p *ngFor="let service of itemSelection.services">- {{ service.name }}</p>
+                  </ng-container>
+                  <ng-template #singleService>
+                    - {{ itemSelection.services[0].name }}
+                  </ng-template>
+                </td>
+                <td>{{ itemSelection.itemTotalPrice | currency: 'EUR' }}</td>
+              </tr>
+            </tbody>
+          </table>
+          
+        
+
         <h2>Infos Client</h2>
 
         <p>{{ order.userId.id }}</p>

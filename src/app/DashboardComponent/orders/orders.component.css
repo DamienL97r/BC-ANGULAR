@@ -45,6 +45,14 @@
     width:  30px;
 }
 
+.assigned {
+    background-color: red;
+  }
+  
+  .done {
+    background-color: red;
+  }
+
 .custom-calendar-container {
     padding: 20px;
 }

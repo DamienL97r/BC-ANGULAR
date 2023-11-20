@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { OrderService } from '../order.service';
 import { IOrder } from '../interfaces/iorder';
+import { SelectionService } from '../selection.service';
 
 @Component({
   selector: 'app-order-paiyment',
@@ -17,7 +18,8 @@ export class OrderPaiymentComponent {
     private authService: AuthService,
     private localStorageService: LocalStorageService,
     private router: Router,
-    private orderService: OrderService
+    private orderService: OrderService,
+    private selectionService: SelectionService
   ) {}
 
   public paymentForm: FormGroup = new FormGroup({
@@ -27,6 +29,9 @@ export class OrderPaiymentComponent {
     retrievalDate: new FormControl(''),
     depositDate: new FormControl(''),
     totalPrice: new FormControl(''),
+    isAssigned: new FormControl(''),
+    isDone: new FormControl(''),
+    selection: new FormControl(''),
   });
 
   handleSubmit() {
@@ -34,10 +39,9 @@ export class OrderPaiymentComponent {
       let userId = this.authService.getUserId();
       const orderKey = 'order_' + userId;
       const currentData:any = this.localStorageService.getData(orderKey);
-  
-      console.log(currentData[0].Articles);
       
       if(currentData) {
+        console.log(currentData[0].Articles);
         const orderData: IOrder = {
           userId: "http://localhost:8000/api/users/"+this.authService.getUserId(),
           createdDate: new Date(Date.now()),
@@ -45,12 +49,16 @@ export class OrderPaiymentComponent {
           retrievalDate: new Date(currentData.retrievalDate) ,
           totalPrice: parseFloat(currentData[0].totalPrice),
           paymentType: this.paymentForm.value.payment,
+          isAssigned: false,
+          isDone: false,
+          selection: currentData[0].Articles,
         }
           
         this.orderService.add(orderData).subscribe((response) => {
           console.log('La commande a été effectuée', response);
         });
-          
+        console.log(orderData.selection);
+        
       }
     }
 

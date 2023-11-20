@@ -35,6 +35,7 @@ export class OrdersComponent implements OnInit{
 
   ngOnInit(): void {
     this.getOrders();
+    
   }
 
   orders: IOrder[] = [];
@@ -49,8 +50,6 @@ export class OrdersComponent implements OnInit{
     if (this.isCliked === false) {
       this.isCliked = !this.isCliked;
     }
-    console.log('CAL'+this.calendar);
-    
   }
 
   displayList() {
@@ -59,25 +58,26 @@ export class OrdersComponent implements OnInit{
     if (this.isCliked === true) {
       this.isCliked = !this.isCliked;
     }
-    console.log('LISTE'+ this.list);
-    
   }
-
-  // displayOrderItem(){
-  //   this.displayItem = !this.displayItem;
-  //   if (this.displayItem === true) {
-  //     this.btnContent = 'Calendrier';
-  //     this.title = 'Liste';
-  //   } else {
-  //     this.btnContent = 'Calendrier';
-  //     this.title = 'Liste';
-  //   }
-  // }
 
   getOrders() {
     this.service.findAll().subscribe((data: IOrder[]) => {
       this.orders = data;
-  
+      console.log(this.orders);
+      
+      for (const order of this.orders) {
+        if (order.isDone === false) {
+          console.log(order.id+'pas fini');
+        } else {
+          console.log(order.id+'FINI');
+        }
+        if (order.isAssigned === false) {
+          console.log(order.id+'Veuillez assigner cette commande');
+        } else {
+          console.log(order.id+'OK');
+        }
+      }
+      
       this.events = this.orders.map(order => {
         const depositDateFormatted = new Intl.DateTimeFormat('fr-FR', {
           year: 'numeric',

@@ -30,10 +30,12 @@
                         <th>Type de paiement</th>
                         <th>Total</th>
                         <th>ID Client</th>
+                        <th>Attribué</th>
+                        <th>Terminé</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let order of orders">
+                    <tr *ngFor="let order of orders" >
                         <td>
                             <a routerLink="/admin/commandes/{{ order.id }}"><img class="admin-icon-eye" src="../../../assets/INC/IMG/Icones/oeil.png" alt=""></a>
                         </td>
@@ -47,6 +49,8 @@
                         <td>
                             <a routerLink="/admin/commandes"> {{ order.userId.id }}</a>
                         </td>
+                        <td [ngClass]="{'assigned': order.isAssigned === false}"> {{ order.isAssigned }}</td>
+                        <td [ngClass]="{'done': order.isDone === false}"> {{ order.isDone }}</td>
                     </tr>
                 </tbody>
             </table>

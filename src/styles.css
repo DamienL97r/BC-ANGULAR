@@ -88,10 +88,11 @@
 .admin-nav {
     border-right: 2px solid #375DA5;
     background-color: #375DA5;
-    height: 88vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
 }
+
 
 .admin-nav > .admin-nav-item {
     padding: 15px 30px;
