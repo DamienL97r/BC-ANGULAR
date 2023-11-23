@@ -26,16 +26,12 @@ export class OrderDetailsComponent implements OnInit {
     retrievalDate: new Date,
     totalPrice: 0,
     paymentType: '',
-    selection: JSON,
   };
 
   getOrder() {
     let id = this.route.snapshot.paramMap.get('id');
     this.service.findOneById(id).subscribe((data: IOrder) => {
       this.order = data;
-      if (this.order.selection) {
-        this.order.selection = JSON.parse(this.order.selection);
-      }
     })
   }
 }

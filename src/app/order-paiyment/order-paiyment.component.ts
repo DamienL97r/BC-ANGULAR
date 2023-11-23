@@ -49,15 +49,13 @@ export class OrderPaiymentComponent {
           retrievalDate: new Date(currentData.retrievalDate) ,
           totalPrice: parseFloat(currentData[0].totalPrice),
           paymentType: this.paymentForm.value.payment,
-          isAssigned: false,
-          isDone: false,
-          selection: currentData[0].Articles,
+          selectionJson: currentData[0].Articles,
         }
-          
+        console.log(orderData);
+        
         this.orderService.add(orderData).subscribe((response) => {
           console.log('La commande a été effectuée', response);
         });
-        console.log(orderData.selection);
         
       }
     }

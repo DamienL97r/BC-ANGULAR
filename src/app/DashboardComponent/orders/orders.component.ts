@@ -64,19 +64,7 @@ export class OrdersComponent implements OnInit{
     this.service.findAll().subscribe((data: IOrder[]) => {
       this.orders = data;
       console.log(this.orders);
-      
-      for (const order of this.orders) {
-        if (order.isDone === false) {
-          console.log(order.id+'pas fini');
-        } else {
-          console.log(order.id+'FINI');
-        }
-        if (order.isAssigned === false) {
-          console.log(order.id+'Veuillez assigner cette commande');
-        } else {
-          console.log(order.id+'OK');
-        }
-      }
+
       
       this.events = this.orders.map(order => {
         const depositDateFormatted = new Intl.DateTimeFormat('fr-FR', {

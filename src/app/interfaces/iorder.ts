@@ -11,7 +11,5 @@ export interface IOrder {
     retrievalDate: Date;
     totalPrice: number;
     paymentType: string;
-    isAssigned?: boolean;
-    isDone ?: boolean;
-    selection?: any;
+    selectionJson?: any;
 }
