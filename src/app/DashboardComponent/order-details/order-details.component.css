@@ -1,9 +1,3 @@
 td > ul > li {
-    text-decoration: none;
-    text-transform: none;
-}
-
-td > ul {
-    background-color: red;
-    text-decoration: none;
+    list-style: none;
 }

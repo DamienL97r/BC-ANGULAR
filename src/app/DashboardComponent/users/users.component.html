@@ -30,6 +30,8 @@
             </table>
         </div>
 
+        <h2>Employés</h2>
+
         <div *ngFor="let user of users">
             <ng-container *ngIf="user.roles.includes('ROLE_ADMIN') && !user.roles.includes('ROLE_SUPER_ADMIN')">
                 <p>{{ user.id }} - {{ user.lastname }} {{ user.firstname }} ==== {{ user.roles }}</p>

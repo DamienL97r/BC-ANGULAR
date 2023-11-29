@@ -29,8 +29,8 @@ export class OrderPaiymentComponent {
     retrievalDate: new FormControl(''),
     depositDate: new FormControl(''),
     totalPrice: new FormControl(''),
-    isAssigned: new FormControl(''),
-    isDone: new FormControl(''),
+    isAssigned: new FormControl(0),
+    isDone: new FormControl(0),
     selection: new FormControl(''),
   });
 
@@ -49,6 +49,8 @@ export class OrderPaiymentComponent {
           retrievalDate: new Date(currentData.retrievalDate) ,
           totalPrice: parseFloat(currentData[0].totalPrice),
           paymentType: this.paymentForm.value.payment,
+          isAssigned: false,
+          isDone: false,
           selectionJson: currentData[0].Articles,
         }
         console.log(orderData);

@@ -13,7 +13,7 @@
 
 <div *ngFor="let order of currentUser.orders">
     <h3>Commande N°{{order.id}}</h3>
-    <p>{{ order.totalPrice }}</p>
+    <p>{{ order.totalPrice | currency: 'EUR' }}</p>
     <p>{{ order.createdDate | date:'fullDate'}}</p>
 </div>
 

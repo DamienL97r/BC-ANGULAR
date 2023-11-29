@@ -17,6 +17,9 @@ export class OrderService {
     return this.http.post<IOrder>(this.url+'/orders', newOrder);
   }
 
+  patch(id: number, body: any) {
+    return this.http.patch<IOrder>(this.url+'/orders' +id, body);
+  }
 
   findAll() {
     return this.http.get<IOrder[]>("http://localhost:8000/api/orders");

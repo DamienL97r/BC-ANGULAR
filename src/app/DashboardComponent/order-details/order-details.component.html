@@ -8,16 +8,55 @@
 
         <p>Prix {{ order.totalPrice | currency: 'EUR' }}</p>
 
+        <p> {{order.selectionJson.message}}</p>
 
-          
-        
+        <table>
+          <thead>
+            <tr>
+              <th>Nom de l'article</th>
+              <th>Quantité</th>
+              <th>Message</th>
+              <th>Services</th>
+              <th>Prix</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of order.selectionJson">
+              <td>{{ item.articleData.name }}</td>
+              <td>{{ item.quantity }}</td>
+              <td>{{ item.message }}</td>
+              <td>
+                <ul>
+                  <li *ngFor="let service of item.services">- {{ service.name }}</li>
+                </ul>
+              </td>
+              <td>{{ item.itemTotalPrice }}</td>
+            </tr>
+          </tbody>
+        </table>
 
         <h2>Infos Client</h2>
 
-        <p>{{ order.userId.id }}</p>
-        <p>{{ order.userId.email }}</p>
-        <p>{{ order.userId.firstname }} {{ order.userId.lastname }}</p>
-        <p>{{ order.userId.adresse }}</p>
+        <p>Email : {{ order.userId.email }}</p>
+        <p>Nom : {{ order.userId.lastname }}</p>
+        <p>Prénom : {{ order.userId.firstname }}</p>
+        <p>Addresse : {{ order.userId.adresse }}</p>
+
+
+        
+
+        <form [formGroup]="assignForm" (ngSubmit)="assignOrder()">
+          <h2>Attribuer cette commande</h2>
+          <label for="employee">Attribuer à :</label>
+          <select formControlName="employee" required>
+            <ng-container *ngFor="let user of users">
+              <option *ngIf="user.roles.includes('ROLE_ADMIN') && !user.roles.includes('ROLE_SUPER_ADMIN')" [value]="'/api/users/' + user.id">
+                {{ user.firstname }} {{ user.lastname }}
+              </option>
+            </ng-container>
+          </select>
+          <button type="submit" [disabled]="assignForm.invalid">Attribuer</button>
+        </form>
 
         <button routerLink="/admin/commandes" class="main-btn">Revenir à la liste</button>
     </div>
