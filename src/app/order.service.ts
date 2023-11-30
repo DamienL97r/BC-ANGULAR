@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { IOrder } from './interfaces/iorder';
 import { AuthService } from './auth.service';
@@ -18,7 +18,10 @@ export class OrderService {
   }
 
   patch(id: number, body: any) {
-    return this.http.patch<IOrder>(this.url+'/orders' +id, body);
+    // Ajoutez l'en-tête Content-Type à la requête
+    const headers = new HttpHeaders({'Content-Type': 'application/merge-patch+json'});
+  
+    return this.http.patch<IOrder>(this.url + '/orders/' + id, body, { headers });
   }
 
   findAll() {

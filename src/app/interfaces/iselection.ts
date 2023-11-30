@@ -3,5 +3,6 @@ export interface ISelection {
     articleId?: any;
     serviceId?: any;
     employee?: any;
-    orderId?: any;
+    OrderId?: any;
+    jsonOrder?: any;
 }

@@ -13,6 +13,8 @@ export interface IUser {
     plainPassword?:string;
     roles:string;
     orders?: IOrder[];
+    selections?: any;
+    jsonOrder?: any;
 }
 
 export interface ICredentials{

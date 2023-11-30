@@ -11,6 +11,9 @@ export class SelectionService {
 
   url:string = "http://localhost:8000/api"
 
+  findAll() {
+    return this.http.get<ISelection[]>(this.url+'/selections');
+  }
 
   add(newSelection: ISelection) {
     return this.http.post<ISelection>(this.url+'/selections', newSelection);

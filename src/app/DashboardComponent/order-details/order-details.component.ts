@@ -47,11 +47,39 @@ export class OrderDetailsComponent implements OnInit {
 
   public assignForm: FormGroup = new FormGroup({
     employee: new FormControl(''),
+    jsonOrder: new FormControl(''),
   });
 
   assignOrder() {
-    console.log( this.getOrder);
-    
-    console.log(this.assignForm.value)
+
+    if (this.assignForm.valid) {
+
+      let id = this.route.snapshot.paramMap.get('id');
+      let orderId = id ? +id : null;
+
+      if (orderId !== null) { 
+        this.service.patch(orderId, { isAssigned: true }).subscribe(
+          (patchResponse) => {
+            console.log('L\'ordre a été mis à jour avec le statut isAssigned', patchResponse);
+          });
+      }
+
+
+      // supp l.71 si findAll selection !work ===> Essayer avec jsonOrder
+
+
+      this.service.findOneById(id).subscribe((data: IOrder) => {
+        this.order = data;
+        
+        this.assignForm.value.jsonOrder  = this.order;
+        console.log(this.assignForm.value.jsonOrder);
+
+        this.selectionService.add(this.assignForm.value).subscribe((response) => {
+          console.log('La commande a été attribuer', response);
+        });
+      });
+
+    }
   }
+  
 }
