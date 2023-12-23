@@ -1,0 +1,32 @@
+<p>update-article works!</p>
+<form [formGroup]="updateArticle" (ngSubmit)="onSubmit()">
+    <div>
+        <label for="">Nom</label>
+        <input formControlName="name" type="text" value="{{article.name}}">
+    </div>
+
+    <div>
+        <label for="">Prix</label>
+        <input formControlName="price" type="number" value="{{article.price}}">
+    </div>
+
+    <div>
+        <label for="description">Description</label>
+        <textarea formControlName="description" id="" cols="30" rows="10" value="{{article.description}}">Décrivez l'article.</textarea>
+    </div>
+
+    <div>
+        <label for="image">Image</label>
+        <input type="file" name="image" (change)="onFileSelected($event)">
+    </div>
+
+    <div>
+        <!-- Affiche l'image encodée en base64 -->
+        <img *ngIf="updateArticle.value.image" [src]="updateArticle.value.image" alt="Image">
+    </div>
+
+    <button class="btn btn-primary">Envoyer</button>
+</form>
+
+<app-delete-article></app-delete-article>
+<button routerLink="/admin/articles" class="main-btn">Revenir à la liste</button>

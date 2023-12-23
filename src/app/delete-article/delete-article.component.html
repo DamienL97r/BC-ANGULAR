@@ -1,0 +1,16 @@
+
+
+<button class="btn-cancel" (click)="modal.show()">Supprimer</button>
+
+
+
+<dialog #modal>
+    <form [formGroup]="deleteArticle" (ngSubmit)="onSubmit()">
+        <h2>Etes-vous sûr de vouloir supprimer cet élément ?</h2>
+        <div class="btn-container-delete-form">
+            <button class="btn-cancel">Supprimer</button>
+            <a (click)="modal.close()" class="main-btn">Annuler</a>
+        </div>
+    </form>
+    
+ </dialog>

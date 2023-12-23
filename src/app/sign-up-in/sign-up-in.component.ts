@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { AuthService } from '../auth.service';
 import { IToken, IUser } from '../interfaces/iuser';
-import { IOrder } from '../interfaces/iorder';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-up-in',
@@ -76,7 +77,7 @@ export class SignUpInComponent implements OnInit{
   };
 
 
-constructor(public serviceAuth: AuthService) {
+constructor(public serviceAuth: AuthService, private http: HttpClient, private router: Router) {
 }
   ngOnInit(): void {
     this.getUser();
@@ -145,6 +146,16 @@ constructor(public serviceAuth: AuthService) {
         complete:() => {this.loaderConnexion = 'Connexion en cours...';},
         error:() => this.feedback = 'Mauvais mot de passe / email'
       });
+  }
+
+
+  //
+
+  getSymfonyAdminLink(): void {
+    // Obtenez le token JWT actuel depuis votre service d'authentification Angular
+    const jwtToken = this.serviceAuth.getToken();
+
+    window.location.href = `http://localhost:8000`;
   }
 
 }

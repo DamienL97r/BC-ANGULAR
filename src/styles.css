@@ -106,8 +106,10 @@
 }
 
 .admin-body-container {
+    width: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .admin-body-container > h1 {
@@ -117,6 +119,7 @@
 table {
     border-collapse: collapse;
     width: 100%;
+
 }
 
 

@@ -30,7 +30,7 @@
                   <li *ngFor="let service of item.services">- {{ service.name }}</li>
                 </ul>
               </td>
-              <td>{{ item.itemTotalPrice }}</td>
+              <td>{{ item.itemTotalPrice | currency: 'EUR'}}</td>
             </tr>
           </tbody>
         </table>

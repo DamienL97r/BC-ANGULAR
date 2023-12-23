@@ -4,6 +4,10 @@
     <div class="admin-body-container">
         <h1>Articles</h1>
 
+        <div class="add-btn-title-container">
+            <a routerLink="/admin/articles/creer-article" class="main-btn">Créer un article</a>
+        </div>
+
         <div class="table-container">
             <table>
                 <thead>
@@ -11,42 +15,36 @@
                         <th>ID</th>
                         <th>Titre</th>
                         <th>Prix</th>
-                        <th>Description</th>
+                        <th class="small-col">Description</th>
                         <th>Image</th>
-                        <th>Catégorie</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor="let article of articles">
+                        
                         <td>{{ article.id }}</td>
                         <td>{{ article.name }}</td>
                         <td>{{ article.price | currency: 'EUR' }}</td>
-                        <td>{{ article.description }}</td>
-                        <td>{{ article.id }}</td>
-                        <td>{{ article.id }}</td>
+                        <td class="small-col-content">{{ article.description }}</td>
+                        <td><img *ngIf="article.image" [src]="article.image" alt="Image"></td>
+                        <td>
+                            <a routerLink="/admin/articles/{{ article.id }}">
+                                <img class="admin-icon-eye" src="../../../assets/INC/IMG/Icones/oeil.png" alt="">
+                                Voir
+                            </a>
+
+                            <a routerLink="/admin/articles/{{ article.id }}/modifier-article">
+                                <img class="admin-icon-eye" src="../../../assets/INC/IMG/Icones/oeil.png" alt="">
+                                Modifier
+                            </a>
+                        </td>
                     </tr>
                 </tbody>
             </table>
         </div>
     
-        <form [formGroup]="createArticle" (ngSubmit)="onSubmit()">
-            <div>
-                <label for="">Nom</label>
-                <input formControlName="name" type="text">
-            </div>
     
-            <div>
-                <label for="">Prix</label>
-                <input formControlName="price" type="number">
-            </div>
-    
-            <div>
-                <label for="description">Description</label>
-                <textarea formControlName="description" id="" cols="30" rows="10">Décrivez l'article.</textarea>
-            </div>
-    
-            <button class="btn btn-primary">Envoyer</button>
-        </form>
     </div>
 
 </div>

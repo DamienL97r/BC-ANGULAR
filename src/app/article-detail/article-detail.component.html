@@ -1,0 +1,18 @@
+
+
+<div>
+    <p>ID : {{article.id}}</p>
+    <p>Img : {{article.image}}</p>
+    <p>Nom : {{article.name}}</p>
+    <p>Description :{{article.description}}</p>
+    <p>Prix: {{article.price | currency: 'EUR' }}</p>
+</div>
+
+
+<app-delete-article></app-delete-article>
+
+
+<button routerLink="/admin/articles/{{ article.id }}/modifier-article" class="main-btn">Modifier</button>
+
+<button routerLink="/admin/articles" class="main-btn">Revenir à la liste</button>
+

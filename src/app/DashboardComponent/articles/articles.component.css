@@ -1,0 +1,19 @@
+
+.add-btn-title-container {
+    display: flex;
+    width: 70%;
+}
+
+
+.small-col {
+    width: 400px;
+}
+
+.small-col-content {
+    width: 400px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    line-height: 2;
+}

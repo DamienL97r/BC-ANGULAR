@@ -43,6 +43,10 @@ import { OrderDetailsComponent } from './DashboardComponent/order-details/order-
 import { CalendarDateFormatter, CalendarModule, CalendarNativeDateFormatter, DateAdapter, DateFormatterParams } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ArticleDetailComponent } from './article-detail/article-detail.component';
+import { CreateArticleComponent } from './create-article/create-article.component';
+import { UpdateArticleComponent } from './update-article/update-article.component';
+import { DeleteArticleComponent } from './delete-article/delete-article.component';
 
 registerLocaleData(localeFr);
 
@@ -91,6 +95,10 @@ class CustomDateFormatter extends CalendarNativeDateFormatter {
     UsersComponent,
     DashboardMyAccountComponent,
     OrderDetailsComponent,
+    ArticleDetailComponent,
+    CreateArticleComponent,
+    UpdateArticleComponent,
+    DeleteArticleComponent,
   ],
   imports: [
     BrowserModule,

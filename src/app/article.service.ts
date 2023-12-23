@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { IArticle } from './interfaces/iarticle';
 import { Observable, of } from 'rxjs';
@@ -30,6 +30,24 @@ export class ArticleService {
 
       let article = this.articles.find(e => e.id === id);
       return article;
+    }
+
+    show(id: any) {
+      let url:string = 'http://127.0.0.1:8000/api/articles/';
+      return this.http.get<IArticle>(url+id);
+    }
+
+    update(id: number, body: any) {
+      let url:string = 'http://127.0.0.1:8000/api/articles/';
+      // Ajoutez l'en-tête Content-Type à la requête
+      const headers = new HttpHeaders({'Content-Type': 'application/merge-patch+json'});
+    
+      return this.http.patch<IArticle>(url+ id, body, { headers });
+    }
+
+    delete(id: number) {
+      let url:string = 'http://127.0.0.1:8000/api/articles/';
+      return this.http.delete<IArticle>(url+id);
     }
 
     getModalData(): Observable<IArticle | null> {

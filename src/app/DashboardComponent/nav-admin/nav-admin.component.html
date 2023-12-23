@@ -3,7 +3,7 @@
         <a routerLink="/admin/dashboard">Informations générales</a>
     </div>
 
-    <div class="admin-nav-item">
+    <div class="admin-nav-item"> <!-- Pour masquer les onglets aux employés *ngIf="isSuperAdmin" -->
         <a routerLink="/admin/articles">Articles</a>
     </div>
 
@@ -20,6 +20,6 @@
     </div>
 
     <div class="admin-nav-item">
-        <a routerLink="/admin/mon-compte">Mon Compte</a>
+        <a routerLink="/admin/mon-compte">Mes tâches</a>
     </div>
 </div>

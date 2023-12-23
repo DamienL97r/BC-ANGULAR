@@ -18,6 +18,9 @@ import { ServicesComponent } from './DashboardComponent/services/services.compon
 import { UsersComponent } from './DashboardComponent/users/users.component';
 import { DashboardMyAccountComponent } from './DashboardComponent/dashboard-my-account/dashboard-my-account.component';
 import { OrderDetailsComponent } from './DashboardComponent/order-details/order-details.component';
+import { ArticleDetailComponent } from './article-detail/article-detail.component';
+import { CreateArticleComponent } from './create-article/create-article.component';
+import { UpdateArticleComponent } from './update-article/update-article.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
@@ -31,6 +34,16 @@ const routes: Routes = [
   { path: 'connexion-inscription', component: SignUpInComponent},
   { path: 'admin/dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
   { path: 'admin/articles', component: ArticlesComponent, canActivate: [AuthGuard]},
+  { path: 'admin/articles/creer-article', component: CreateArticleComponent, canActivate: [AuthGuard]},
+  { path: 'admin/articles/:id/modifier-article', component: UpdateArticleComponent, canActivate: [AuthGuard]},
+  { path: 'admin/articles/:id', component: ArticleDetailComponent, canActivate: [AuthGuard]},
+  
+
+
+
+
+
+
   { path: 'admin/commandes', component: OrdersComponent, canActivate: [AuthGuard]},
   { path: 'admin/commandes/:id', component: OrderDetailsComponent, canActivate: [AuthGuard]},
   { path: 'admin/services', component: ServicesComponent, canActivate: [AuthGuard]},

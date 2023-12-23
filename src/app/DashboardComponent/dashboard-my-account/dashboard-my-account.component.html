@@ -2,31 +2,27 @@
     <app-nav-admin></app-nav-admin>
 
     <div class="admin-body-container">
-        <h1>Mon compte</h1>
+        <h1>Mes tâches</h1>
 
     
         <ng-container *ngFor="let selection of currentEmployee.selections">
             <h2>Commande n°{{ selection.jsonOrder.id }} pour {{ currentEmployee.firstname}}</h2>
+            <h3>Déposé le : {{ selection.jsonOrder.depositDate | date: "dd/MM/YYYY" }}</h3>
+            <h3>Retrait client le : {{ selection.jsonOrder.retrievalDate | date: "dd/MM/YYYY" }}</h3>
             <table border="1" *ngIf="selection.jsonOrder">
               <tr>
-                <th>Order ID</th>
-                <th>Deposit Date</th>
-                <th>Retrieval Date</th>
                 <th>Message</th>
                 <th>Quantity</th>
                 <th>Article Name</th>
                 <th>Service Name</th>
               </tr>
             
-              <tr>
-                <td>{{ selection.jsonOrder.id }}</td>
-                <td>{{ selection.jsonOrder.depositDate | date: "dd/MM/YYYY" }}</td>
-                <td>{{ selection.jsonOrder.retrievalDate | date: "dd/MM/YYYY" }}</td>
-                <td>{{ selection.jsonOrder.selectionJson[0].message }}</td>
-                <td>{{ selection.jsonOrder.selectionJson[0].quantity }}</td>
-                <td>{{ selection.jsonOrder.selectionJson[0].articleData.name }}</td>
+              <tr *ngFor="let order of selection.jsonOrder.selectionJson">
+                <td>{{ order.message }}</td>
+                <td>{{ order.quantity }}</td>
+                <td>{{ order.articleData.name }}</td>
                 <td>
-                  <ng-container *ngFor="let service of selection.jsonOrder.selectionJson[0].services">
+                  <ng-container *ngFor="let service of order.services">
                     <p>- {{ service.name }}</p>
                   </ng-container>
                 </td>

@@ -136,7 +136,8 @@
     <div *ngIf="isLogged" class="hello-user">
       <p>Bonjour {{ currentUser.firstname }} {{ currentUser.lastname }}, vous êtes connecté !</p>
       <button *ngIf="!isAdmin" routerLink="/" class="main-btn">Retour à l'accueil</button>
-      <button *ngIf="isAdmin" routerLink="/admin/dashboard" class="main-btn">Dashboard</button>
+      <a *ngIf="isAdmin" (click)="getSymfonyAdminLink()" target="_blank" >Easy admin</a>
+      <button *ngIf="isAdmin" routerLink="/admin/dashboard" class="main-btn">Dashboard Angular</button>
     </div>
 
   </div>
