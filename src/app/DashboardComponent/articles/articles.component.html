@@ -16,7 +16,6 @@
                         <th>Titre</th>
                         <th>Prix</th>
                         <th class="small-col">Description</th>
-                        <th>Image</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -27,17 +26,10 @@
                         <td>{{ article.name }}</td>
                         <td>{{ article.price | currency: 'EUR' }}</td>
                         <td class="small-col-content">{{ article.description }}</td>
-                        <td><img *ngIf="article.image" [src]="article.image" alt="Image"></td>
+                        
                         <td>
-                            <a routerLink="/admin/articles/{{ article.id }}">
-                                <img class="admin-icon-eye" src="../../../assets/INC/IMG/Icones/oeil.png" alt="">
-                                Voir
-                            </a>
-
-                            <a routerLink="/admin/articles/{{ article.id }}/modifier-article">
-                                <img class="admin-icon-eye" src="../../../assets/INC/IMG/Icones/oeil.png" alt="">
-                                Modifier
-                            </a>
+                            <a routerLink="/admin/articles/{{ article.id }}">Voir</a>
+                            <a routerLink="/admin/articles/{{ article.id }}/modifier-article">Modifier</a>
                         </td>
                     </tr>
                 </tbody>

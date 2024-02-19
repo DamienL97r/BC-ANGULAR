@@ -21,7 +21,6 @@ export class ArticleDetailComponent implements OnInit{
     name: '',
     description: '',
     price: 0,
-    image: '',
   }
 
   getArticle() {

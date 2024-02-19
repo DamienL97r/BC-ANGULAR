@@ -16,8 +16,7 @@ export class UpdateArticleComponent implements OnInit {
     this.updateArticle = new FormGroup({
       name: new FormControl('', [Validators.required]),
       price: new FormControl('', [Validators.required, Validators.min(0.01)]),
-      description: new FormControl(''),
-      image: new FormControl('')
+      description: new FormControl('')
     });
   }
   
@@ -30,7 +29,6 @@ export class UpdateArticleComponent implements OnInit {
     name: '',
     description: '',
     price: 0,
-    image: '',
   }
 
   updateArticle: FormGroup;
@@ -47,13 +45,8 @@ export class UpdateArticleComponent implements OnInit {
     this.updateArticle.patchValue({
       name: this.article.name,
       price: this.article.price,
-      description: this.article.description,
-      image: this.article.image
+      description: this.article.description
     });
-  }
-
-  onFileSelected(event: any) {
-    const file = event.target.files[0];
   }
 
 

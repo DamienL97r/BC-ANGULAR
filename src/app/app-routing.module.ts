@@ -31,7 +31,10 @@ const routes: Routes = [
   { path: 'paiement', component: OrderPaiymentComponent, canActivate: [AuthGuard]},
   { path: 'mon-compte', component: MyAccountComponent, canActivate: [AuthGuard]},
   { path: 'contact', component: ContactComponent, canActivate: [AuthGuard]},
+  
   { path: 'connexion-inscription', component: SignUpInComponent},
+
+
   { path: 'admin/dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
   { path: 'admin/articles', component: ArticlesComponent, canActivate: [AuthGuard]},
   { path: 'admin/articles/creer-article', component: CreateArticleComponent, canActivate: [AuthGuard]},

@@ -10,9 +10,6 @@ export class ArticleService {
 
   constructor(private http: HttpClient) { }
 
-    // Modal form article
-
-    
     articles: IArticle[] = [];
     private modalData: IArticle | null = null;
 
@@ -24,12 +21,6 @@ export class ArticleService {
     create(newArticle: IArticle) {
       let url:string = 'http://127.0.0.1:8000/api/articles';
       return this.http.post<IArticle>(url, newArticle);
-    }
-
-    findById(id: number): IArticle | undefined {
-
-      let article = this.articles.find(e => e.id === id);
-      return article;
     }
 
     show(id: any) {
@@ -59,4 +50,10 @@ export class ArticleService {
     }
 
     showModalArticle = false;
+
+    findById(id: number): IArticle | undefined {
+
+      let article = this.articles.find(e => e.id === id);
+      return article;
+    }
 }

@@ -1,4 +1,4 @@
-<p>update-article works!</p>
+
 <form [formGroup]="updateArticle" (ngSubmit)="onSubmit()">
     <div>
         <label for="">Nom</label>
@@ -15,15 +15,6 @@
         <textarea formControlName="description" id="" cols="30" rows="10" value="{{article.description}}">Décrivez l'article.</textarea>
     </div>
 
-    <div>
-        <label for="image">Image</label>
-        <input type="file" name="image" (change)="onFileSelected($event)">
-    </div>
-
-    <div>
-        <!-- Affiche l'image encodée en base64 -->
-        <img *ngIf="updateArticle.value.image" [src]="updateArticle.value.image" alt="Image">
-    </div>
 
     <button class="btn btn-primary">Envoyer</button>
 </form>

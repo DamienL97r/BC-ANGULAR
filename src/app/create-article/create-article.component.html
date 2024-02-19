@@ -1,4 +1,4 @@
-<p>create-article works!</p>
+
 
 <form [formGroup]="createArticle" (ngSubmit)="onSubmit()" >
     <div>
@@ -16,12 +16,10 @@
         <textarea formControlName="description" id="" cols="30" rows="10">Décrivez l'article.</textarea>
     </div>
 
-    <div>
-        <label for="image">Image</label>
-        <input type="file" name="image" id="">
-    </div>
+
 
     <button class="btn btn-primary">Envoyer</button>
 </form>
 
 <button routerLink="/admin/articles" class="main-btn">Revenir à la liste</button>
+

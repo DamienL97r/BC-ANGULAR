@@ -3,5 +3,4 @@ export interface IArticle {
     name:string;
     price:number;
     description:string;
-    image?:any;
 }
