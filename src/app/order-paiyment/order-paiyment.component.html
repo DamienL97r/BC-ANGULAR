@@ -7,25 +7,57 @@
     <h3 id="infos">Paiement</h3>
 </div>
 
-
-
-<div class="block">
-    <div class="item"></div>
-    <div class="item" id="credit-card"></div>
+<div class="payment-choice-container">
+    <form [formGroup]="paymentForm" (ngSubmit)="handleSubmit()" class="paymentForm">
+        <label for="payment">Choisir un moyen de paiement</label>
+            <select formControlName="payment" id="" (change)="handlePaymentChange($event)">
+                <option value="sur place">Paiement à l'arrivée</option>
+                <option value="virement bancaire">Virement bancaire</option>
+                <option value="en ligne">Paiement en ligne</option>
+            </select>
+        <button class="main-btn">Envoyer</button>
+    </form>
+    <div class="container">
+        <div class="card">
+            <div class="card-inner">
+                <div class="front">
+                    <img src="https://i.ibb.co/PYss3yv/map.png" class="map-img">
+                    <div class="row">
+                        <img src="https://i.ibb.co/G9pDnYJ/chip.png" width="60px">
+                        <img src="https://i.ibb.co/WHZ3nRJ/visa.png" width="60px">
+                    </div>
+                    <div class="row card-no">
+                        <p>5244</p>
+                        <p>2150</p>
+                        <p>8252</p>
+                        <p>6420</p>
+                    </div>
+                    <div class="row card-holder">
+                        <p>Titulaire</p>
+                        <p>Valide jusqu'au</p>
+                    </div>
+                    <div class="row name">
+                        <p>JOE ALISON</p>
+                        <p>10 / 25</p>
+                    </div>
+                </div>
+                <div class="back">
+                    <img src="https://i.ibb.co/PYss3yv/map.png" class="map-img">
+                    <div class="bar"></div>
+                    <div class="row card-cvv">
+                        <div>
+                            <img src="https://i.ibb.co/S6JG8px/pattern.png">
+                        </div>
+                        <p>824</p>
+                    </div>
+                    <div class="row signature">
+                        <p>Signature</p>
+                        <img src="https://i.ibb.co/WHZ3nRJ/visa.png" width="80px">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
-<form [formGroup]="paymentForm" (ngSubmit)="handleSubmit()">
 
-
-    <label for="payment">Choisir un moyen de paiement</label>
-        <select formControlName="payment" id="">
-            <option value="sur place">Paiement à l'arrivée</option>
-            <option value="virement bancaire">Virement bancaire</option>
-            <option value="en ligne">Paiement en ligne</option>
-        </select>
-
-
-    <button class="main-btn">Envoyer</button>
-
-    
-</form>

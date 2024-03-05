@@ -1,1 +1,64 @@
-<p>contact works!</p>
+<div class="contact-container">
+        
+    <div class="info-contact-container">
+        <h3>Informations de contact</h3>
+
+        <div class="info-contact">
+            <img src="INC/IMG/Icones/appel-telephonique (1).png" alt="">
+            <p>Téléphone : 01 23 45 67 89</p>
+        </div>
+        <div class="info-contact">
+            <img src="INC/IMG/Icones/enveloppe-de-courrier-electronique (1).png" alt="">
+            <p>Mail : contact@info.com</p>
+        </div>
+        <div class="info-contact">
+            <img src="INC/IMG/Icones/cartes-et-drapeaux (1).png" alt="">
+            <p>Adresse : 555 rue Hello World, 55555 Ville</p>
+        </div>
+    </div>
+
+    <div class="form-contact-container">
+        <h3>Contactez nous !</h3>
+
+        <div class="form-contact">
+            <form action="mailto:damienlebon.ifpa@gmail.com" method="post" enctype="text/plain">
+                <div class="double-input-wrap">
+                    <div class="name">
+                        <label for="name">Prénom</label>
+                        <input placeholder="Prénom" id="name" type="text" required>
+                    </div>
+            
+                    <div class="last-name">
+                        <label for="lastname">Nom</label>
+                        <input placeholder="Nom" id="lastname" type="text" required>
+                    </div>
+                </div>
+            
+                <div class="full-input">
+                    <div class="mail">
+                        <label for="mail">Mail</label>
+                        <input placeholder="Mail" id="mail" type="email" required>
+                    </div>
+                </div>
+
+                <div class="full-input">
+                    <div class="subject">
+                        <label for="subject">Objet</label>
+                        <input placeholder="Objet" id="subject" type="text" required>
+                    </div>
+                </div>
+
+                <div class="full-input">
+                    <div class="message">
+                        <label for="message">Message</label>
+                        <textarea name="message" id="message" cols="30" rows="10" placeholder="Entrez votre message ici..." required></textarea>
+                    </div>
+                </div>
+            
+                <div class="full-input">
+                    <button type="submit">Envoyer</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

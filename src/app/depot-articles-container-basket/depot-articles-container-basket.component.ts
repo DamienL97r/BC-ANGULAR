@@ -15,16 +15,12 @@ export class DepotArticlesContainerBasketComponent implements OnInit {
   constructor(private localStorageService: LocalStorageService, private serviceCarousel: CarouselService, public authService: AuthService, private router: Router) {}
 
   formData:any = [];
-  sentences:any = []; //Ne marche pas
 
   ngOnInit(): void {
-    // Récupérez les données stockées dans le localStorage
+    // Récupérer les données stockées dans le localStorage
     let userId = this.authService.getUserId();
     const userBasketKey = 'basketItems_' + userId;
     this.formData = this.localStorageService.getData(userBasketKey);
-
-    this.sentences = this.sentenceCarousel(); //Ne marche pas
-
   }
 
   sentenceCarousel() {
@@ -62,29 +58,17 @@ export class DepotArticlesContainerBasketComponent implements OnInit {
   })
 
   onSubmit() {
-
-    //Récupère l'id du user
     let userId = this.authService.getUserId();
-
-    //Récupérer le prix total du panier
     let totalPrice = this.calculateBasketTotalPrice();
     this.orderForm.patchValue({userId: userId, totalPrice: totalPrice, Articles: this.formData});
-
-    console.log(this.orderForm.value, this.formData);
-
-    
-
-    // Sauvegardez les données dans le localStorage
     const OrderKey = 'order_' + userId;
+
+    // Supprime l'ancien panier s'il y en a déjà
     if (OrderKey) {
       localStorage.removeItem(OrderKey);
     }
     this.localStorageService.saveData(OrderKey, this.orderForm.value);
-
-
-    // Rediriger le user vers la page de récap de la commande
     this.router.navigate(['/recapitulatif-de-commande']);
-
   }
 }
 

@@ -154,7 +154,6 @@ constructor(public serviceAuth: AuthService, private http: HttpClient, private r
   getSymfonyAdminLink(): void {
     // Obtenez le token JWT actuel depuis votre service d'authentification Angular
     const jwtToken = this.serviceAuth.getToken();
-
     window.location.href = `http://localhost:8000`;
   }
 

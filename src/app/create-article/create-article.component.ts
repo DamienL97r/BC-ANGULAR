@@ -25,8 +25,7 @@ export class CreateArticleComponent {
       console.log("Success");
       console.log(this.createArticle.value);
 
-      this.service.create(this.createArticle.value).subscribe(response => {
-        console.log('Un article a été ajouté avec succès:', response);});
+      this.service.create(this.createArticle.value).subscribe();
     }
 
         // Réinitialiser le formulaire

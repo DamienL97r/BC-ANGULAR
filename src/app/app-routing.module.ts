@@ -24,7 +24,6 @@ import { UpdateArticleComponent } from './update-article/update-article.componen
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
-  { path: 'tarifs', component: TarifsComponent, canActivate: [AuthGuard]},
   { path: 'depot-articles', component: DepotArticlesComponent, canActivate: [AuthGuard]},
   { path: 'recapitulatif-de-commande', component: OrderSummaryComponent, canActivate: [AuthGuard]},
   { path: 'vos-informations', component: OrderInformationsComponent, canActivate: [AuthGuard]},
@@ -34,18 +33,11 @@ const routes: Routes = [
   
   { path: 'connexion-inscription', component: SignUpInComponent},
 
-
   { path: 'admin/dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
   { path: 'admin/articles', component: ArticlesComponent, canActivate: [AuthGuard]},
   { path: 'admin/articles/creer-article', component: CreateArticleComponent, canActivate: [AuthGuard]},
   { path: 'admin/articles/:id/modifier-article', component: UpdateArticleComponent, canActivate: [AuthGuard]},
   { path: 'admin/articles/:id', component: ArticleDetailComponent, canActivate: [AuthGuard]},
-  
-
-
-
-
-
 
   { path: 'admin/commandes', component: OrdersComponent, canActivate: [AuthGuard]},
   { path: 'admin/commandes/:id', component: OrderDetailsComponent, canActivate: [AuthGuard]},

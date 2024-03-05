@@ -5,7 +5,6 @@
     <button *ngIf="calculateBasketTotalPrice() !== '0.00'" (click)="clearBasket()"> Vider le panier</button>
 
 
-    <!-- Si le panier est vide-->
     <div *ngIf="calculateBasketTotalPrice() === '0.00'" class="empty-basket">
         <img src="../../assets/INC/IMG/Icones/empty-basket.png" alt="empty basket">
         <h2>Mince...</h2>

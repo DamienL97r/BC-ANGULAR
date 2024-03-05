@@ -1,0 +1,190 @@
+/*      CONTACT PAGE START       */
+
+.contact-container {
+    width: 100%;
+    margin: 40px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.info-contact-container {
+    width: 40%;
+    min-width: 300px;
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+}
+
+.info-contact-container > h3 {
+    display: flex;
+    justify-content: center;
+    height: 20%;
+    margin-bottom: 8%;
+    margin-top: 12%;
+    font-size: 1.5rem;
+}
+
+.info-contact-container > .info-contact {
+    height: fit-content;
+    display: flex;
+    height: auto;
+    margin: 10px 0;
+}
+
+.info-contact-container > .info-contact > p{
+    padding-top: 5px;
+    width: 100%;
+}
+
+.info-contact-container > .info-contact > img {
+    width: 30px;
+    height: 30px;
+    margin-right: 20px;
+}
+
+.form-contact-container {
+    width: 50%;
+    min-width: 300px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-contact-container > h3 {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    margin-bottom: 8%;
+    margin-top: 5%;
+    font-size: 1.5rem;
+}
+
+.form-contact-container > .form-contact {
+    border: 2px solid #63A4C7;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.form-contact-container > .form-contact > form > .double-input-wrap {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.form-contact-container > .form-contact > form > .double-input-wrap > .name {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    min-width: 200px;
+    margin-bottom: 20px;
+}
+
+.form-contact-container > .form-contact > form > .double-input-wrap > .name > input {
+    border-radius: 10px;
+    border: none;
+    padding: 10px 10px;
+    font-size: 1rem;
+    outline: none;
+    border: 2px solid #63A4C7;
+    margin-top: 5px;
+}
+
+.form-contact-container > .form-contact > form > .double-input-wrap > .last-name {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    min-width: 200px;
+    margin-bottom: 20px;
+}
+
+.form-contact-container > .form-contact > form > .double-input-wrap > .last-name > input {
+    border-radius: 10px;
+    border: none;
+    padding: 10px 10px;
+    font-size: 1rem;
+    outline: none;
+    border: 2px solid #63A4C7;
+    margin-top: 5px;
+}
+
+.form-contact-container > .form-contact > form > .full-input {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.form-contact-container > .form-contact > form > .full-input > .mail{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.form-contact-container > .form-contact > form > .full-input > .mail > input {
+    border-radius: 10px;
+    border: none;
+    padding: 10px 10px;
+    font-size: 1rem;
+    outline: none;
+    border: 2px solid #63A4C7;
+    margin-top: 5px;
+}
+
+.form-contact-container > .form-contact > form > .full-input > .subject{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.form-contact-container > .form-contact > form > .full-input > .subject > input {
+    border-radius: 10px;
+    border: none;
+    padding: 10px 10px;
+    font-size: 1rem;
+    outline: none;
+    border: 2px solid #63A4C7;
+    margin-top: 5px;
+}
+
+.form-contact-container > .form-contact > form > .full-input > .message{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.form-contact-container > .form-contact > form > .full-input > .message > textarea {
+    border-radius: 10px;
+    border: none;
+    padding: 10px 10px;
+    font-size: 1rem;
+    outline: none;
+    min-height: 100px;
+    max-height: 100px;
+    border: 2px solid #63A4C7;
+    margin-top: 5px;
+    min-width: 96.5%;
+    max-width: 96.5%;
+}
+
+.form-contact-container > .form-contact > form > .full-input > button{
+    margin-left: 50%;
+    transform: translateX(-50%);
+    margin-top: 10px;
+    padding: 10px 30px;
+    border: 2px solid #63a4c700;
+    background-color: #63A4C7;
+    color: white;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border-radius: 13px;
+    cursor: pointer;
+}
+
+.form-contact-container > .form-contact > form > .full-input > button:hover {
+    border: 2px solid #63a4c7;
+    background-color: #ffffff;
+    color: black;
+    transition: all 0.5s ease-in-out;
+}
+/*      CONTACT PAGE END       */

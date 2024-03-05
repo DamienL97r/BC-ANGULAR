@@ -3,7 +3,7 @@
 <div id="modal" class="modal" >
     <div class="modal-content">
         <a (click)="articleService.showModalArticle = false" class="close">&times;</a>
-        <h2>{{ (articleService.getModalData() | async)?.name }} {{ (articleService.getModalData() | async)?.id }}</h2>
+        <h2>{{ (articleService.getModalData() | async)?.name }}</h2>
         <h4>Prix à l'article : {{ (articleService.getModalData() | async)?.price | currency: 'EUR'  }}</h4>
 
         <form [formGroup]="selectionForm" (ngSubmit)="onSubmit()">

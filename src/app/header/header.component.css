@@ -209,3 +209,9 @@ nav {
         display: flex;
     }
 }
+
+@media screen and (max-width: 600px){
+    #logo-title{
+        display: none;
+    }
+}

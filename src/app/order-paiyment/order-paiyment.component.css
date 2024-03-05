@@ -38,28 +38,166 @@
 }
 
 
-
-.block {
-    background-color: red;
-    margin: auto;
-    width: 90%;
-    height: 350px;
+.payment-choice-container {
     display: flex;
-    justify-content: center;
+    width: 100%;
+    height: 400px;
+    /* background-color: red; */
+    justify-content: space-around;
     align-items: center;
 }
 
-.item {
-    margin: 10px;
-    width: 40%;
-    height: 90%;
-    background-color: blue;
+.payment-choice-container > .paymentForm {
+    position: absolute;
+    top: 40%;
+    left: 30%;
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    transition: left 0.7s ease-in-out;
+}
+.paymentForm.paymentForm-online {
+    left: 0%;
 }
 
-#credit-card {
+.payment-choice-container > .paymentForm > select {
+    margin-top: 20px;
+    width: 80%;
+    padding: 5px 10px;
+}
+
+.payment-choice-container > .paymentForm > button {
+    margin-left: 50%;
+    transform: translateX(-50%);
     position: absolute;
-    height: 300px;
-    width: 300px;
-    top: 50%;
-    right: 0%;
+    bottom: 0;
+}
+
+
+
+
+.container {
+    position: absolute;
+    top: 30%;
+    left: 100%;
+    border-left: 3px solid #375DA5 ;
+    /* background-color: green; */
+    height: 400px;
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: left 0.7s ease-in-out;
+}
+
+.container.payment-online {
+    left: 60%;
+}
+
+.card {
+    position: absolute;
+    width: 350px;
+    height: 220px;
+    color: #fff;
+    cursor: pointer;
+    perspective: 1000px;
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+}
+
+.front, .back {
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(45deg, #0045c7, #ff2c7d);
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 20px 30px;
+    border-radius: 15px;
+    overflow: hidden;
+    z-index: 1;
+    backface-visibility: hidden;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.map-img {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.3;
+    z-index: -1;
+}
+
+.card-no {
+    font-size: 35px;
+    margin-top: 30px;
+}
+
+.card-holder {
+    font-size: 12px;
+    margin-top: 20px;
+}
+
+.name {
+    font-size: 22px;
+    margin-top: 15px;
+}
+
+.bar {
+    background: #222;
+    margin-left: -30px;
+    margin-right: -30px;
+    height: 60px;
+    margin-top: 10px;
+}
+
+.card-cvv {
+    margin-top: 20px;
+}
+
+.card-cvv div {
+    flex: 1;
+}
+
+.card-cvv img {
+    width: 100%;
+    display: block;
+    line-height: 0;
+}
+
+.card-cvv p {
+    background: #fff;
+    color: #000;
+    font-size: 22px;
+    padding: 10px 20px;
+}
+
+.card-text {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.signature {
+    margin-top: 15px;
+}
+
+.back {
+    transform: rotateY(180deg);
+}
+
+.card:hover .card-inner {
+    transform: rotateY(-180deg);
 }

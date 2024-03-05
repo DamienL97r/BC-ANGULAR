@@ -77,18 +77,14 @@ export class DepotArticlesModalComponent implements OnInit {
   }
 
   onSubmit() {
-
-    //Récupère l'id du user
     let userId = this.authService.getUserId();
 
-    // Récupère les données de l'article cliqué
     this.getData();
     let metaDataArticle = {
       id: this.article?.id || null,
       name: this.article?.name || null,
       price: this.article?.price || null
     };
-
     let priceSelection = this.calculateTotalPrice();
 
     // Filtrer les services sélectionnés
@@ -100,17 +96,12 @@ export class DepotArticlesModalComponent implements OnInit {
     // Récupérez les données du formulaire
     const formData = this.selectionForm.value;
 
-    // Sauvegardez les données dans le localStorage
+    // Sauvegarder les données dans le localStorage
     const userBasketKey = 'basketItems_' + userId;
     this.localStorageService.saveData(userBasketKey, formData);
-  
-    // Réinitialiser le formulaire
+
     this.selectionForm.reset();
-
-    // Fermer la modal
     this.articleService.showModalArticle = false;
-
-    // Reload la page courante pour mettre à jour le panier 
     window.location.reload();
   }
 }

@@ -6,7 +6,7 @@
         <div *ngFor="let article of articles">
             <a (click)="articleService.showModalArticle = true" (click)="sendProductDataToService(article)" class="openModal">
                 <div class="card-article">
-                    <img src="./assets/INC/IMG/Vetements/Costume/costume-2.png" alt="">
+                    <img src="{{article.image}}" alt="">
                     <h3>{{article.name}}</h3>
                 </div>
             </a>

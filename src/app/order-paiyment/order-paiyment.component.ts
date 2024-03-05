@@ -34,12 +34,26 @@ export class OrderPaiymentComponent {
     selection: new FormControl(''),
   });
 
+  handlePaymentChange(event: Event) {
+    const paymentMethod = (event.target as HTMLSelectElement).value;
+    const container = document.querySelector('.container');
+    const containerForm = document.querySelector('.paymentForm');
+    if (container && containerForm) {
+        if (paymentMethod === 'en ligne') {
+            container.classList.add('payment-online');
+            containerForm.classList.add('paymentForm-online');
+        } else {
+            container.classList.remove('payment-online');
+            containerForm.classList.remove('paymentForm-online');
+        }
+    }
+  }
+
   handleSubmit() {
     if (this.paymentForm.valid) {
       let userId = this.authService.getUserId();
       const orderKey = 'order_' + userId;
       const currentData:any = this.localStorageService.getData(orderKey);
-      
       if(currentData) {
         console.log(currentData[0].Articles);
         const orderData: IOrder = {
@@ -53,17 +67,14 @@ export class OrderPaiymentComponent {
           isDone: false,
           selectionJson: currentData[0].Articles,
         }
-        console.log(orderData);
-        
-        this.orderService.add(orderData).subscribe((response) => {
-          console.log('La commande a été effectuée', response);
-        });
-        
+        this.orderService.add(orderData).subscribe();
       }
     }
-
-
-    
-
+    let userId = this.authService.getUserId();
+    const userBasketKey = 'basketItems_' + userId;
+    localStorage.removeItem(userBasketKey);
+    const orderKey = 'order_' + userId;
+    localStorage.removeItem(orderKey);
+    this.router.navigate(['/']); // Rediriger le user vers la page d'accueil
   }
 }

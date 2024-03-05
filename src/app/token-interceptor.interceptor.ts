@@ -38,8 +38,7 @@ export class TokenInterceptor implements HttpInterceptor {
   
       const expirationTimeInMilliseconds = expirationTimeInSeconds * 1000;
       const now = Date.now();
-      
-  
+
       if (now >= expirationTimeInMilliseconds) {
         // Le token est expiré
         return true;
@@ -52,5 +51,4 @@ export class TokenInterceptor implements HttpInterceptor {
       return true;
     }
   }
-  
 }

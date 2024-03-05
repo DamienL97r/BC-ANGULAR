@@ -30,7 +30,6 @@ export class ArticleService {
 
     update(id: number, body: any) {
       let url:string = 'http://127.0.0.1:8000/api/articles/';
-      // Ajoutez l'en-tête Content-Type à la requête
       const headers = new HttpHeaders({'Content-Type': 'application/merge-patch+json'});
     
       return this.http.patch<IArticle>(url+ id, body, { headers });

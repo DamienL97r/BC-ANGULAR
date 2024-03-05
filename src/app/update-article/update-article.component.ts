@@ -29,6 +29,7 @@ export class UpdateArticleComponent implements OnInit {
     name: '',
     description: '',
     price: 0,
+    image: '',
   }
 
   updateArticle: FormGroup;

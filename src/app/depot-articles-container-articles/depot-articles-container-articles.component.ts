@@ -21,11 +21,9 @@ export class DepotArticlesContainerArticlesComponent implements OnInit {
   public dataSubsribtion: Subscription | undefined ;
   articles: IArticle[] = [];
 
-
-  //La fontion test permet de récupérer l'id dans la console de l'article cliqué 
   sendProductDataToService(article: IArticle) {
     this.articleService.setModalData(article);
-    this.articleService.showModalArticle = true; // Déclenche l'ouverture de la modal après avoir défini les données
+    this.articleService.showModalArticle = true; // Déclenche l'ouverture de la modal après avoir défini les données de l'article
   }
 
   getArticles(){
